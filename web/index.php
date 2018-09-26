@@ -3,16 +3,12 @@
     <head>
         <title>Michael Mann .tech</title>
 		<?php include ("common/head.php"); ?>
-
     </head>
     <body>
         <header>
         </header>
         <nav>
-            <ul>
-                <li><img id="logo" src="images/ui/logo-content.png" alt="Michael Mann .tech Logo" /></a></li>
-            </ul>
-            <h1 id="title">CS 313 Home Page</h1>
+			<?php include ("common/nav.php"); ?>
         </nav>
         <main>
             
@@ -30,7 +26,6 @@
                 </div>
 				<button type="button" id="btnHome" onclick="HomeButtonClicked()">Click Me!</button>
             </div>
-            
     </body>
 </html>
 
