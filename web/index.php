@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>Michael Mann .tech</title>
+		<?php include ("common/head.php"); ?>
 		<meta charset="utf-8"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" />
 		<script src="scripts/scripts.js" type="text/javascript"></script>
