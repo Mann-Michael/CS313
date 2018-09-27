@@ -15,9 +15,10 @@
             
             <div class="floatpage" id="default" >
                 <p>Hello. My name is Michael Mann. I currently work as a video game system designer and have for the last 15 or so years. I love pretty much all things nerdy. This includes board games, video games, technology, comics, you name it.<p>
-				<p>I love understanding how things are put together and how they work. From a young age I took things apart and put them back together in intersting ways to try and improve them. I feel taht my natural curiosity and outside of the box thinking helps me in my career and will hopefully be an asset to this course.<p>
+				<p>I love understanding how things are put together and how they work. From a young age I took things apart and put them back together in interesting ways to try and improve them. I feel that my natural curiosity and 'outside of the box' thinking helps me in my career and will hopefully be an asset to this course.<p>
             </div>
-            <div><img id="default-img" src="images/math.gif" alt="Math is hard." />
+            <div>
+				<img id="default-img" src="images/math.gif" alt="Math is hard." />
             </div>
     </body>
 </html>
