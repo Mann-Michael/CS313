@@ -9,22 +9,20 @@
         </header>
         <nav>
 			<?php include ("common/nav.php"); ?>
+			<h1 id="title">CS 313 Assignments</h1>
         </nav>
         <main>
             
             <div class="floatpage" id="default" >
-                <div id="div1">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-				<input type="text" id="txtDiv1">
-				<button type="button" id="btnDiv1" onclick="Div1ColorClicked()">Change Color!</button>
-				<div id="div2">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				</div>                
-				<div id="div3">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-				<button type="button" id="btnHome" onclick="HomeButtonClicked()">Click Me!</button>
+				<p>This is where all the assignment links go.<p>
+				<p>Like this:<p>
+				
+				<ul>
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+			</ul>
             </div>
     </body>
 </html>

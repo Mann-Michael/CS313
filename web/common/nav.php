@@ -1,4 +1,4 @@
 <ul>
-	<li><img id="logo" src="images/ui/logo-content.png" alt="Michael Mann .tech Logo" /></a></li>
+	<li><a href="index.php"><img id="logo" src="images/ui/logo-content.png" alt="Michael Mann .tech Logo" /></a></li>
+	<li class="navbar"><a id="nav-projects" href="about.php">About</a></li>
 </ul>
-<h1 id="title">CS 313 Home Page</h1>
