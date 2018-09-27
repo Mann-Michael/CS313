@@ -20,6 +20,7 @@
             <div>
 				<img id="default-img" src="images/math.gif" alt="Math is hard." />
             </div>
+		</main>
     </body>
 </html>
 

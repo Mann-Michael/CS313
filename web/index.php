@@ -11,8 +11,7 @@
 			<?php include ("common/nav.php"); ?>
 			<h1 id="title">CS 313 Assignments</h1>
         </nav>
-        <main>
-            
+        <main>            
             <div class="floatpage" id="default" >
 				<p>This is where all the assignment links go.<p>
 				<p>Like this:<p>
@@ -24,6 +23,7 @@
 					<li><a href="#">Link 4</a></li>
 			</ul>
             </div>
+		</main>
     </body>
 </html>
 
