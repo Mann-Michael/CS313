@@ -17,7 +17,7 @@
 				<p>Like this:<p>
 				
 				<ul>
-					<li><a href="#">Link 1</a></li>
+					<li><a href="/team/3/teamActivity.php">Team Assignment Week 3</a></li>
 					<li><a href="#">Link 2</a></li>
 					<li><a href="#">Link 3</a></li>
 					<li><a href="#">Link 4</a></li>
