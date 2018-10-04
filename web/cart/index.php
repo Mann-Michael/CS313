@@ -28,6 +28,9 @@
 			
 		
 		*/
+		//Get products list
+		$products = getProducts();
+		
 		//Build the display info for the cart browse
 		$displayProd = buildCartBrowseDisplay($products);
 		
