@@ -15,8 +15,16 @@
             <div class="floatpage" id="default" >
 				<?php
                 //if (isset($displayProd)) {
-                    echo $displayProd;
-				echo "test";
+                    //echo $displayProd;
+					
+				$products = array(1,2,3,4,5,6,7);
+				
+				<ul>
+				foreach ($products as $product) {
+					echo "<li>$product</li><br>";
+				</ul>
+					
+				echo "test2";
 				?>
             </div>
 		</main>
