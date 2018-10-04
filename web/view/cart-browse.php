@@ -19,10 +19,10 @@
 					
 				            $majors =
                 array(
-                    "CS"=>"Computer Science",
-                    "WDD" => "Web Design and Development",
-                    "CIT" => "Computer Information Technology",
-                    "CE"  => "Computer Engineering"
+                    7,
+                    8,
+                    9,
+                    10"
                 );
 
             foreach($majors as $major) {
