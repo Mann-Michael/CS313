@@ -29,18 +29,10 @@
 		
 		*/
 		//Get products list
-	$products = array( 
-			"card1"=>100, 
-			"card2"=>200, 
-			"card3"=>300, 
-			"card4"=>400, 
-			"card5"=>500
-		);
+		$products = getProducts();
 			
-			$displayProd = $products;
-		
 		//Build the display info for the cart browse
-		//$displayProd = buildCartBrowseDisplay($products);
+		$displayProd = buildCartBrowseDisplay($products);
 		
 			include '../view/cart-browse.php';
 			break;
