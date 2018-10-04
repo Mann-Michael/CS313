@@ -33,6 +33,18 @@
 			$products = array(1,2,3,4,5,6,7);
 			
 		//Build the display info for the cart browse
+		function buildCartBrowseDisplay($products){
+		//This area is for building the display of the Cart Browse
+			$bd = '<ul id="prod-display">';
+			foreach ($products as $product) {
+				$bd .= '<li>';
+				$bd .= "$product";
+				$bd .= '</li>';
+			}
+			$bd .= '</ul>';
+			return $bd;
+		}
+		
 		$displayProd = buildCartBrowseDisplay($products);
 		
 			include '../view/cart-browse.php';
