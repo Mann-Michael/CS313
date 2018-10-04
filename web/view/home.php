@@ -14,8 +14,8 @@
         <main>            
             <div class="floatpage" id="default" >
 				<ul>
-					<li><a href=".../team/3/teamActivity.php">Team Assignment Week 3</a></li>
-					<li><a href=".../cart/index.php">Shopping Cart</a></li>
+					<li><a href="/team/3/teamActivity.php">Team Assignment Week 3</a></li>
+					<li><a href="/cart/index.php">Shopping Cart</a></li>
 					<li><a href="#">Link 3</a></li>
 					<li><a href="#">Link 4</a></li>
 				</ul>

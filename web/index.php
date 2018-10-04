@@ -12,7 +12,8 @@ if ($action == NULL){
 }
 
 switch ($action){
-    case 'something':
+    case 'about':
+		include 'view/about.php';
         break;
     default:
         include 'view/home.php';
