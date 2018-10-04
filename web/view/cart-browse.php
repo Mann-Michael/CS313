@@ -37,7 +37,7 @@
 								$bd .=	'</li>';
 							}
 							$bd .= '</ul>';
-						
+						echo $bd;
 						
 /*						$length = sizeof($products);
 					
