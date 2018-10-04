@@ -5,9 +5,7 @@ function buildCartBrowseDisplay($products){
     $bd = '<ul id="prod-display">';
     foreach ($products as $product) {
         $bd .= '<li>';
-        $bd .= "$product[";
-        $bd .= '<hr>';
-        $bd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <h2>$product[invName]</h2></a>";
+        $bd .= "$product";
         $bd .= '</li>';
     }
     $bd .= '</ul>';
