@@ -17,12 +17,17 @@
                 //if (isset($displayProd)) {
                     //echo $displayProd;
 					
-				$products = array(1,2,3,4,5,6,7);
-				
-				<ul>
-				foreach ($products as $product) {
-					echo "<li>$product</li><br>";
-				</ul>
+				            $majors =
+                array(
+                    "CS"=>"Computer Science",
+                    "WDD" => "Web Design and Development",
+                    "CIT" => "Computer Information Technology",
+                    "CE"  => "Computer Engineering"
+                );
+
+            foreach($majors as $major) {
+                echo "<input type='radio' name='major' value='$major'>$major<br>";
+            }
 					
 				echo "test2";
 				?>
