@@ -29,7 +29,11 @@
 		
 		*/
 		//Get products list
-		$products = getProducts();
+			$products['card1'] = 100;
+			$products['card2'] = 200;
+			$products['card3'] = 300;
+			$products['card4'] = 400;
+			$products['card5'] = 500;
 		
 		//Build the display info for the cart browse
 		$displayProd = buildCartBrowseDisplay($products);
