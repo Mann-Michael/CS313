@@ -1,0 +1,244 @@
+/* The main css file is the default view for this site. It is mobile first
+
+* { box-sizing: border-box;}  /* This wildcard applies to all elements ensuring a box layout model */
+html{
+ box-sizing: border-box;
+ background-image: url("../images/background.jpg"); 
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+*, *:before, *:after{
+ box-sizing: inherit;
+}
+
+/*General Formatting*/
+body {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Open Source Sans', sans-serif;
+    background-color: #ffffff;
+    padding-bottom: 15px;
+}
+
+h1, h2, h3 {
+    font-family: 'Permanent Marker', sans-serif;
+}
+/*Form Formatting*/
+form {
+    padding: 10px;
+}
+
+label {
+    font-size: 24px;
+}
+
+.field-wrapper {
+    padding: 10px;
+}
+
+.field-wrapper p {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.field-wrapper a {
+    background-color: #de2226;
+    font-size: 24px;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 75px;
+    margin: auto;
+}
+/*Table Formatting*/
+table {
+   border: 1px solid black;
+   padding: 10px;
+   margin-top: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+thead {
+    background-color: #f2f2f2; 
+}
+
+/*Header Formatting*/
+#logo {
+    max-height: 100px;
+    padding: 10px;
+}
+
+#accountfolder {
+    width: 30px;
+    padding-top: 15px;
+    padding-right: 5px;
+    display: inline;
+    right: 100px;
+}
+
+.headerdiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+}
+
+header h2 {
+    position: relative;
+    font-size: 15px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+/*Nav  Formatting*/
+.navigation.responsive { 
+    position: relative;
+}
+	
+.navigation.responsive li a {
+    padding: 1rem; 
+    text-align: center;	
+    display: block; 
+    text-decoration:none; 
+}
+
+.navigation.responsive li a:hover { 
+    background-color: #ffffff; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #de2226;
+}
+
+nav ul li {
+    float: left;	
+}
+
+nav ul li a {
+    display: block;
+    font-family: 'Open Source Sans', sans-serif;	
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/*nav ul li.active a {}*/
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #de2226;
+}
+
+/*Main Formatting*/
+
+main {
+    padding: 10px;
+}
+
+.notify {
+    color: #de2226;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#rotator {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    color: #990033;
+    /*max-height: 918px;*/
+    background-image: url("../images/rocketfeature.jpg");
+    background-size: cover;
+}
+
+#coyote {
+    height:100%;
+    width: 100%;
+}
+    
+#actionbtn {
+    height: 25px;
+    width: 104px;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.recipe {
+    padding: 5px 5px 5px 5px;
+}
+
+.recipe-img {
+    background-color: #808080;
+    text-align: center;
+}
+
+/*Footer Formatting*/
+
+footer p {
+    text-align: center;
+    font-size: 12px;
+}
+
+/*Products Formatting*/
+#prod-display{
+ margin: 0;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+}
+#prod-display li{
+ margin-bottom: .5em;
+ border: 1px #ccc solid;
+ list-style-type: none;
+ flex: 1 1 auto;
+}
+#prod-display li img{
+ width: 100%;
+ height: 200px;
+}
+
+#prod-spec {
+    display: grid;
+    grid-template-columns: 1fr;   
+    width: 75%;
+    margin: auto;
+}
+#prod-spec-img img{
+    display: inline;
+    max-width: 100%;
+}
+#prod-spec-details p{
+    padding: 15px 15px 15px 15px;
+    font-weight: bold;
+}
+
+#prod-spec-details li {
+    text-decoration: none; 
+    list-style-type: none;
+}
+
+.review-div {
+    background-color: #f2f2f2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.review-spec {
+    background-color: #ffffff;
+    border: #000000 solid 1px;
+    margin: 15px;
+    padding: 5px;
+}
