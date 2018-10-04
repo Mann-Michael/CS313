@@ -16,21 +16,13 @@
 				<?php
                 //if (isset($displayProd)) {
                     //echo $displayProd;
-					
-						$products = array(
-							array("card1","100"), 
-							array("card2","200"), 
-							array("card3","300"), 
-							array("card4","400"), 
-							array("card5","500")	
-						);
 						
-						$length = sizeof($products);
+/*						$length = sizeof($products);
 					
 						for ($i = 0; $i < $length; $i++) {
 							echo "<li>" . $products[$i][0]. "," . $products[$i][1] . "</li>";
 						}
-					
+*/					
 				echo "test2";
 				?>
             </div>

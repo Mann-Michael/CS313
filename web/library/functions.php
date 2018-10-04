@@ -2,13 +2,17 @@
 
 function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
-    $bd = '<ul id="prod-display">';
-    foreach ($products as $product) {
-        $bd .= '<li>';
-        $bd .= "$product";
-        $bd .= '</li>';
-    }
-    $bd .= '</ul>';
+	$length = sizeof($products);
+	$bd = '<ul>';
+	for ($i = 0; $i < $length; $i++) {
+		$bd .= '<li>';
+		$bd .=	$products[$i][0];
+		$bd .= ",";
+		$bd .= $products[$i][1];
+		$bd .=	'</li>';
+	}
+	$bd .= '</ul>';
+
     return $bd;
 }
 

@@ -29,10 +29,10 @@
 		
 		*/
 		//Get products list
-		//$products = getProducts();
+		$products = getProducts();
 			
 		//Build the display info for the cart browse		
-		//$displayProd = buildCartBrowseDisplay($products);
+		$displayProd = buildCartBrowseDisplay($products);
 		
 			include '../view/cart-browse.php';
 			break;
