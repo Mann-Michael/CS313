@@ -16,6 +16,9 @@
 				<?php
                 if (isset($displayProd)) {
                     echo $displayProd;
+				}					
+
+						
 						
 /*						$length = sizeof($products);
 					
