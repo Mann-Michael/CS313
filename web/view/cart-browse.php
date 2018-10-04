@@ -18,13 +18,13 @@
 //                    echo $displayProd;
 //				}					
 
-											$products = array(
-							array("card1","100"), 
-							array("card2","200"), 
-							array("card3","300"), 
-							array("card4","400"), 
-							array("card5","500")	
-						);
+$products = array(
+	array("card1","100"), 
+	array("card2","200"), 
+	array("card3","300"), 
+	array("card4","400"), 
+	array("card5","500")	
+);
 	
 
 function buildCartBrowseDisplay($products){

@@ -1,6 +1,6 @@
 <?php
 
-function buildCartBrowseDisplay($products){
+/*function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$length = sizeof($products);
 	$bd = '<ul>';
@@ -14,12 +14,12 @@ function buildCartBrowseDisplay($products){
 	$bd .= '</ul>';
 
     return $bd;
-}
+}*/
 
-function buildCartReviewDisplay($products){
+/*function buildCartReviewDisplay($products){
 //This area is for building the display of the Cart Review
 
-/*    $rd = '<ul id="prod-display">';
+    $rd = '<ul id="prod-display">';
     foreach ($products as $product) {
         $rd .= '<li>';
         $rd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'></a>";
@@ -28,9 +28,9 @@ function buildCartReviewDisplay($products){
         $rd .= '</li>';
     }
     $rd .= '</ul>';
-	*/
+	
     return $rd;
-}
+}*/
 
 function buildCartConfirmDisplay($products){
 //This area is for building the display of the Cart Confirm
