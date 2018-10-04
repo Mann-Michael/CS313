@@ -1,10 +1,15 @@
 <?php
-    //this is the CART controller
+    //This is the CART controller
+	
+	// Create or access a Session
+	session_start();
 
-    // Get the functions library
+    //Get the functions library
     require_once '../library/functions.php';
+	//Get the products model
+    require_once '../model/products-model.php';
 
-	//get general information - UNUSED 
+	//Create general information - UNUSED 
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
@@ -15,6 +20,17 @@
 
     switch ($action){
         case 'viewCartBrowse':
+		
+		/*
+			Create a list of things to sell
+			Loop over the list and create a form with the items in it. 
+			Include item, id, cost, count
+			
+		
+		*/
+		//Build the display info for the cart browse
+		$displayProd = buildCartBrowseDisplay($products);
+		
 			include '../view/cart-browse.php';
 			break;
 		case 'viewCartReview':

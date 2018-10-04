@@ -13,7 +13,10 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<!-- content goes here -->
+				<?php
+                if (isset($displayProd)) {
+                    echo $displayProd;
+				?>
             </div>
 		</main>
     </body>
