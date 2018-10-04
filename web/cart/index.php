@@ -25,14 +25,13 @@
 			Create a list of things to sell
 			Loop over the list and create a form with the items in it. 
 			Include item, id, cost, count
-			
-		
 		*/
+		
 		//Get products list
-		$products = getProducts();
+		//$products = getProducts();
 			
 		//Build the display info for the cart browse		
-		$displayProd = buildCartBrowseDisplay($products);
+		//$displayProd = buildCartBrowseDisplay($products);
 		
 			include '../view/cart-browse.php';
 			break;
