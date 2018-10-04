@@ -34,9 +34,11 @@
 			$products['card3'] = 300;
 			$products['card4'] = 400;
 			$products['card5'] = 500;
+			
+			$displayProd = $products;
 		
 		//Build the display info for the cart browse
-		$displayProd = buildCartBrowseDisplay($products);
+		//$displayProd = buildCartBrowseDisplay($products);
 		
 			include '../view/cart-browse.php';
 			break;
