@@ -27,8 +27,8 @@
 						
 						//$length = sizeof($products);
 					
-						for ($i = 0; $i <= 5; $i++) {
-							echo "<li>$products[$i][0], $products[$i][1]</li>";
+						for ($i = 0; $i < 5; $i++) {
+							echo "<li>" . $products[$i][0]. "," . $products[$i][1] . "</li>";
 						}
 					
 				echo "test2";
