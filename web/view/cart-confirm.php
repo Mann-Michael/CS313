@@ -9,7 +9,7 @@
         </header>
         <nav>
 			<?php include ("common/nav.php"); ?>
-			<h1 id="title">CS 313 Assignments</h1>
+			<h1 id="title">Confirm</h1>
         </nav>
         <main>            
             <div class="floatpage" id="default" >
