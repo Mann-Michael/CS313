@@ -2,7 +2,7 @@
     //This is the CART controller
 	
 	// Create or access a Session
-	session_start();
+	//session_start();
 
     //Get the functions library
     require_once '../library/functions.php';
