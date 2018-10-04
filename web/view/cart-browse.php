@@ -17,17 +17,17 @@
                 //if (isset($displayProd)) {
                     //echo $displayProd;
 					
-				            $majors =
-                array(
-                    "test1",
-                    "test2",
-                    "test3",
-                    "test4"
-                );
-
-            foreach($majors as $major) {
-                echo "<input type='radio' name='major' value='$major'>$major<br>";
-            }
+						$products = array(
+							array("card1","100"), 
+							array("card2","200"), 
+							array("card3","300"), 
+							array("card4","400"), 
+							array("card5","500")	
+						);
+					
+						for ($i = 0, $i <= sizeof($products)) $i++) {
+							echo "<li>$products[i][0], $products[i][1]</li>";
+						}
 					
 				echo "test2";
 				?>
