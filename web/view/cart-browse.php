@@ -19,10 +19,10 @@
 					
 				            $majors =
                 array(
-                    7,
-                    8,
-                    9,
-                    10"
+                    "test1",
+                    "test2",
+                    "test3",
+                    "test4"
                 );
 
             foreach($majors as $major) {
