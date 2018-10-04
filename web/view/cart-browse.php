@@ -24,8 +24,10 @@
 							array("card4","400"), 
 							array("card5","500")	
 						);
+						
+						$length = sizeof($products);
 					
-						for ($i = 0, $i <= sizeof($products)) $i++) {
+						for ($i = 0, $i <= $length, $i++) {
 							echo "<li>$products[i][0], $products[i][1]</li>";
 						}
 					
