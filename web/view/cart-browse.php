@@ -25,9 +25,9 @@
 							array("card5","500")	
 						);
 						
-						//$length = sizeof($products);
+						$length = sizeof($products);
 					
-						for ($i = 0; $i < 5; $i++) {
+						for ($i = 0; $i < $length; $i++) {
 							echo "<li>" . $products[$i][0]. "," . $products[$i][1] . "</li>";
 						}
 					
