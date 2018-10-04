@@ -14,8 +14,8 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php
-                //if (isset($displayProd)) {
-                    //echo $displayProd;
+                if (isset($displayProd)) {
+                    echo $displayProd;
 						
 /*						$length = sizeof($products);
 					
