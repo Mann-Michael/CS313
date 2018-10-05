@@ -9,8 +9,8 @@ function buildCartBrowseDisplay($products){
 	$bd = '<ul>';	
 	foreach ($products as $product) {
 		$bd .= '<li><button type="button" id="minus">-</button>';
-		$bd .= '<label for="' .$product . '">0</label>';
-		$bd .= . $product;
+		$bd .= '<label for="' . $product . '">0</label>';
+		$bd .= $product;
 		$bd .='<button type="button" id="plus">+</button></li>';
 	}
 	$bd .= '</ul>';
