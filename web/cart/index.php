@@ -28,17 +28,14 @@
 				if they want to adjust the cart, they can return to it
 			*/
 		
-		$product1 = $_POST['product 1'];
-		$product2 = $_POST['product2'];
-		$product3 = $_POST['product3'];
-		$product4 = $_POST['product4'];
-		$product5 = $_POST['product5'];
+		$products[] = $_POST['product1'];
+		$products[] = $_POST['product2'];
+		$products[] = $_POST['product3'];
+		$products[] = $_POST['product4'];
+		$products[] = $_POST['product5'];
 
-		echo $product1;
-		echo $product2;
-		echo $product3;
-		echo $product4;
-		echo $product5;
+		echo $product[];
+
 		break;
 		
 		$displayReview = buildCartReviewDisplay($productReview);
