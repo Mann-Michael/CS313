@@ -14,11 +14,9 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php
-//                if (isset($displayProd)) {
-//                    echo $displayProd;
-//				}					
+				
 
-$products = getProducts();
+	$products = getProducts();
 
 /*$products = array(
 	array("card1","100"), 
@@ -45,27 +43,10 @@ function buildCartBrowseDisplay($products){
     return $bd;
 }*/
 	$displayProd = buildCartBrowseDisplay($products);
-	echo $displayProd;
-/*						
-							$length = sizeof($products);
-							$bd = '<ul>';
-							for ($i = 0; $i < $length; $i++) {
-								$bd .= '<li>';
-								$bd .=	$products[$i][0];
-								$bd .= ",";
-								$bd .= $products[$i][1];
-								$bd .=	'</li>';
-							}
-							$bd .= '</ul>';
-						echo $bd;
-						
-						$length = sizeof($products);
-					
-						for ($i = 0; $i < $length; $i++) {
-							echo "<li>" . $products[$i][0]. "," . $products[$i][1] . "</li>";
-						}
-*/					
-				echo "test2";
+	if (isset($displayProd)){
+		echo $displayProd;
+	}
+				echo "test3";
 				?>
             </div>
 		</main>
