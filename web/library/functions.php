@@ -8,7 +8,7 @@ function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$bd = '<ul>';	
 	foreach ($products as $product) {
-		$bd .= '<li><button type="button" id="plus">+</button> $product <button type="button" id="minus">-</button></li>';
+		$bd .= '<li><button type="button" id="minus">-</button>' . $product . '<button type="button" id="plus">+</button></li>';
 	}
 	$bd .= '</ul>';
 /*	
