@@ -29,7 +29,7 @@
 			*/
 		
 		$productReview[] = array_values($_POST);
-		print $productReview;
+		print $productReview[0];
 		break;
 		
 		$displayReview = buildCartReviewDisplay($productReview);
