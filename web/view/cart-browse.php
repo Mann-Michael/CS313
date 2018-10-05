@@ -16,7 +16,7 @@
 				<?php
 				
 
-	$products = getProducts();
+	//$products = getProducts();
 
 /*$products = array(
 	array("card1","100"), 
@@ -42,7 +42,7 @@ function buildCartBrowseDisplay($products){
 
     return $bd;
 }*/
-	$displayProd = buildCartBrowseDisplay($products);
+	//$displayProd = buildCartBrowseDisplay($products);
 	if (isset($displayProd)){
 		echo $displayProd;
 	}
