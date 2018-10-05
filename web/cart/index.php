@@ -28,7 +28,7 @@
 				if they want to adjust the cart, they can return to it
 			*/
 		
-		$product1 = $_POST['product1'];
+		$product1 = $_POST['product 1'];
 		$product2 = $_POST['product2'];
 		$product3 = $_POST['product3'];
 		$product4 = $_POST['product4'];
