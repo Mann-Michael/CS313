@@ -28,12 +28,13 @@
 				if they want to adjust the cart, they can return to it
 			*/
 		
-		$products = array( 'product1' => $_POST['product1'], 'product2' => $_POST['product2'], 'product3' => $_POST['product3'], 'product4' => $_POST['product4'], 'product5' => $_POST['product5']);
+		$productsReview = array('product1' => $_POST['product1'], 'product2' => $_POST['product2'], 'product3' => $_POST['product3'], 'product4' => $_POST['product4'], 'product5' => $_POST['product5']);
 
-		print_r($products);
-		break;
+		//debug code for pulling products out of the array	
+		//print_r($products);
+		//break;
 		
-		$displayReview = buildCartReviewDisplay($productReview);
+		$displayReview = buildCartReviewDisplay($productsReview);
 		
 			include '../view/cart-review.php';
 			break;
