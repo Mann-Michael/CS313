@@ -14,9 +14,9 @@
         <main>            
             <div class="floatpage" id="default" >
 			<form method="post" action="index.php">
-			<?php if (isset($displayProd)){echo $displayProd;}?>
-			<input type="submit" name="btnReview" value="Review Checkout">
-			<input type="hidden" name="action" value="viewCartReview">
+				<?php if (isset($displayProd)){echo $displayProd;}?>
+				<input type="submit" name="btnReview" value="Review Checkout">
+				<input type="hidden" name="action" value="viewCartReview">
 			</form>
 	
             </div>

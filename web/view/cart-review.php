@@ -13,7 +13,11 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<!-- content goes here -->
+			<form method="post" action="index.php">
+				<?php if (isset($displayProd)){echo $displayProd;}?>
+				<input type="submit" name="btnCheckout" value="Checkout">
+				<input type="hidden" name="action" value="viewCartCheckout">
+			</form>
             </div>
 		</main>
     </body>

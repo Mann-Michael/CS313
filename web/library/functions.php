@@ -9,26 +9,21 @@ function buildCartBrowseDisplay($products){
 	$bd = "";
 	foreach ($products as $product) {
 		$bd .= '<label for="' . $product . '">' . $product . '</label>';
-		$bd .= '<input type="radio" name="' . $product . '" value="1"><br>';
+		$bd .= '<input type="checkbox" name="' . $product . '" value="1"><br>';
 	}
     return $bd;
 }
 
-/*function buildCartReviewDisplay($products){
+function buildCartReviewDisplay($products){
 //This area is for building the display of the Cart Review
 
-    $rd = '<ul id="prod-display">';
-    foreach ($products as $product) {
-        $rd .= '<li>';
-        $rd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'></a>";
-        $rd .= '<hr>';
-        $rd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <h2>$product[invName]</h2></a>";
-        $rd .= '</li>';
-    }
-    $rd .= '</ul>';
-	
+	$rd = "";
+	foreach ($products as $product) {
+		$rd .= '<label for="' . $product . '">' . $product . '</label>';
+		$rd .= '<input type="checkbox" name="' . $product . '" value="0"><br>';
+	}
     return $rd;
-}*/
+}
 
 function buildCartConfirmDisplay($products){
 //This area is for building the display of the Cart Confirm

@@ -2,7 +2,7 @@
     //This is the CART controller
 	
 	// Create or access a Session
-	//session_start();
+	session_start();
 
     //Get the functions library
     require_once '../library/functions.php';
@@ -20,9 +20,24 @@
 
     switch ($action){
 		case 'viewCartReview':
+			/*
+				get all info that is posted and add it to an array in the session
+				Create a view that has each item in the array and add a delete option
+				if the user delete the item, it removes it from the list and the array then refreshes the page as review
+				if the user likes this, they continue and go to checkout 
+				if they want to adjust the cart, they can return to it
+			*/
+		
+		$productReview[] = array_values($_POST);
+		$displayReview = buildCartReviewDisplay($productReview);
+		
 			include '../view/cart-review.php';
 			break;
         case 'viewCartCheckout':
+			/*
+				User inputs personal info and stores it in the session
+			
+			*/
 			include '../view/cart-checkout.php';
 			break;
 		case 'viewCartConfirm':
