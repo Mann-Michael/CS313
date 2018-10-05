@@ -8,21 +8,12 @@ function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$bd = '<ul>';	
 	foreach ($products as $product) {
-		$bd .= '<li><button type="button" id="minus">-</button>' . $product . '<button type="button" id="plus">+</button></li>';
+		$bd .= '<li><button type="button" id="minus">-</button>';
+		$bd .= '<label for="' .$product . '">0</label>';
+		$bd .= . $product;
+		$bd .='<button type="button" id="plus">+</button></li>';
 	}
 	$bd .= '</ul>';
-/*	
-	$length = sizeof($products);
-	$bd = '<ul>';
-	for ($i = 0; $i < $length; $i++) {
-		$bd .= '<li>';
-		$bd .=	$products[$i][0];
-		$bd .= ",";
-		$bd .= $products[$i][1];
-		$bd .=	'</li>';
-	}
-	$bd .= '</ul>';
-*/
     return $bd;
 }
 
