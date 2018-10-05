@@ -29,6 +29,9 @@
 			*/
 		
 		$productReview[] = array_values($_POST);
+		print $productReview;
+		break;
+		
 		$displayReview = buildCartReviewDisplay($productReview);
 		
 			include '../view/cart-review.php';
