@@ -27,15 +27,11 @@
 			Include item, id, cost, count
 		*/
 		
+		echo "list";
+		break;
+		
 		//Get products list
-		//$products = getProducts();
-			$products = array(
-		array("card1","100"), 
-		array("card2","200"), 
-		array("card3","300"), 
-		array("card4","400"), 
-		array("card5","500")	
-	);
+		$products = getProducts();
 			
 		//Build the display info for the cart browse		
 		$displayProd = buildCartBrowseDisplay($products);

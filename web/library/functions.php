@@ -1,5 +1,8 @@
 <?php
 
+/* 
+ * this is the FUNCTIONS library
+ */
 
 function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
