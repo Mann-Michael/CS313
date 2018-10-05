@@ -6,6 +6,13 @@
 
 function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
+	$bd = '<ul>';	
+	foreach ($products as $product) {
+		$bd .= '<li><button type="button" id="plus">+</button> $product <button type="button" id="minus">-</button></li>';
+	}
+	$bd .= '</ul>'
+	}
+/*	
 	$length = sizeof($products);
 	$bd = '<ul>';
 	for ($i = 0; $i < $length; $i++) {
@@ -16,9 +23,14 @@ function buildCartBrowseDisplay($products){
 		$bd .=	'</li>';
 	}
 	$bd .= '</ul>';
-
+*/
     return $bd;
 }
+
+
+<button type="button" id="plus">+</button>
+<button type="button" id="minus">-</button>
+
 
 /*function buildCartReviewDisplay($products){
 //This area is for building the display of the Cart Review

@@ -14,11 +14,7 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php
-					//$products = getProducts();
-					//$displayProd = buildCartBrowseDisplay($products);
-					
 					if (isset($displayProd)){echo $displayProd;}
-					echo "test3";
 				?>
             </div>
 		</main>

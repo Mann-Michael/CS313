@@ -19,14 +19,6 @@
     }
 
     switch ($action){
-        case 'viewCartBrowse':
-		
-		/*
-			Create a list of things to sell
-			Loop over the list and create a form with the items in it. 
-			Include item, id, cost, count
-		*/
-
 		case 'viewCartReview':
 			include '../view/cart-review.php';
 			break;
@@ -36,12 +28,14 @@
 		case 'viewCartConfirm':
 			include '../view/cart-confirm.php';		
 			break;
-        default:
+        case 'viewCartBrowse':
+		default:
 		/*
 			Create a list of things to sell
 			Loop over the list and create a form with the items in it. 
 			Include item, id, cost, count
 		*/
+		
 		//Get products list
 		$products = getProducts();
 			
