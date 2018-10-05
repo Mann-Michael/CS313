@@ -42,7 +42,7 @@ function buildCartBrowseDisplay($products){
 
     return $bd;
 }*/
-	$displayProd = buildCartBrowseDisplay($products);
+	//$displayProd = buildCartBrowseDisplay($products);
 	if (isset($displayProd)){
 		echo $displayProd;
 	}
