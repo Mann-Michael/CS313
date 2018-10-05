@@ -34,7 +34,7 @@
 		$products[] = $_POST['product4'];
 		$products[] = $_POST['product5'];
 
-		echo $product[];
+		echo $products[];
 
 		break;
 		
