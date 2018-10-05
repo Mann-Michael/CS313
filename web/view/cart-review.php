@@ -14,7 +14,7 @@
         <main>            
             <div class="floatpage" id="default" >
 			<form method="post" action="index.php">
-				<?php if (isset($displayProd)){echo $displayProd;}?>
+				<?php if (isset($displayReview)){echo $displayReview;}?>
 				<input type="submit" name="btnCheckout" value="Checkout">
 				<input type="hidden" name="action" value="viewCartCheckout">
 			</form>
