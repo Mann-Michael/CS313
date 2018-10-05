@@ -31,7 +31,7 @@
 		$products = getProducts();
 		
 		//test code
-		echo $products[0][0];
+		print $products;
 		break;
 			
 		//Build the display info for the cart browse		
