@@ -1,6 +1,6 @@
 <?php
 
-function buildCartBrowseDisplay($products){
+/*function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$length = sizeof($products);
 	$bd = '<ul>';

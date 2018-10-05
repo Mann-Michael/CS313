@@ -31,8 +31,21 @@
 		$products = getProducts();
 		
 		//test code
-		print $products;
-		break;
+		function buildCartBrowseDisplay($products){
+//This area is for building the display of the Cart Browse
+	$length = sizeof($products);
+	$bd = '<ul>';
+	for ($i = 0; $i < $length; $i++) {
+		$bd .= '<li>';
+		$bd .=	$products[$i][0];
+		$bd .= ",";
+		$bd .= $products[$i][1];
+		$bd .=	'</li>';
+	}
+	$bd .= '</ul>';
+
+    return $bd;
+}
 			
 		//Build the display info for the cart browse		
 		$displayProd = buildCartBrowseDisplay($products);
