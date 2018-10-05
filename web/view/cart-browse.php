@@ -18,7 +18,9 @@
 //                    echo $displayProd;
 //				}					
 
-$products = array(
+$products = getProducts();
+
+/*$products = array(
 	array("card1","100"), 
 	array("card2","200"), 
 	array("card3","300"), 
@@ -27,7 +29,7 @@ $products = array(
 );
 	
 
-/*function buildCartBrowseDisplay($products){
+function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$length = sizeof($products);
 	$bd = '<ul>';
