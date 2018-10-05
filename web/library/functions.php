@@ -10,8 +10,7 @@ function buildCartBrowseDisplay($products){
 	foreach ($products as $product) {
 		$bd .= '<li><button type="button" id="plus">+</button> $product <button type="button" id="minus">-</button></li>';
 	}
-	$bd .= '</ul>'
-	}
+	$bd .= '</ul>';
 /*	
 	$length = sizeof($products);
 	$bd = '<ul>';
