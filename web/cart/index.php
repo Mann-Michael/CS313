@@ -26,18 +26,7 @@
 			Loop over the list and create a form with the items in it. 
 			Include item, id, cost, count
 		*/
-		
-		echo "list";
-		break;
-		
-		//Get products list
-		$products = getProducts();
-			
-		//Build the display info for the cart browse		
-		$displayProd = buildCartBrowseDisplay($products);
-		
-			include '../view/cart-browse.php';
-			break;
+
 		case 'viewCartReview':
 			include '../view/cart-review.php';
 			break;
@@ -47,7 +36,18 @@
 		case 'viewCartConfirm':
 			include '../view/cart-confirm.php';		
 			break;
-        default:         
+        default:
+		/*
+			Create a list of things to sell
+			Loop over the list and create a form with the items in it. 
+			Include item, id, cost, count
+		*/
+		//Get products list
+		$products = getProducts();
+			
+		//Build the display info for the cart browse		
+		$displayProd = buildCartBrowseDisplay($products);
+		
             include '../view/cart-browse.php';
     }
 ?>
