@@ -26,11 +26,6 @@ function buildCartBrowseDisplay($products){
     return $bd;
 }
 
-
-<button type="button" id="plus">+</button>
-<button type="button" id="minus">-</button>
-
-
 /*function buildCartReviewDisplay($products){
 //This area is for building the display of the Cart Review
 
