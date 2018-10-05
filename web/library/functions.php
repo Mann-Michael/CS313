@@ -18,7 +18,7 @@ function buildCartReviewDisplay($products){
 //This area is for building the display of the Cart Review
 
 	$rd = "";
-	foreach ($products as $product) {
+	foreach ($products as $product => $amount) {
 		$rd .= '<label for="' . $product . '">' . $product . '</label>';
 		$rd .= '<input type="checkbox" name="' . $product . '" value="0"><br>';
 	}
