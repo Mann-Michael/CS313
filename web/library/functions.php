@@ -6,14 +6,11 @@
 
 function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
-	$bd = '<ul>';	
+	$bd = "";
 	foreach ($products as $product) {
-		$bd .= '<li><button type="button" id="minus">-</button>';
-		$bd .= '<label for="' . $product . '">0</label>';
-		$bd .= $product;
-		$bd .='<button type="button" id="plus">+</button></li>';
+		$bd .= '<label for="' . $product . '">' . $product . '</label>';
+		$bd .= '<input type="radio" name="' . $product . '" value="1"><br>';
 	}
-	$bd .= '</ul>';
     return $bd;
 }
 
