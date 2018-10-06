@@ -42,7 +42,7 @@
 				echo $productsReceived[$i]. "<br>";
 					$product = matchProducts($i);
 				echo $product. "<br>END <br>";	
-				if ($productsReceived[$i] = 1) {
+				if ($productsReceived[$i] == 1) {
 					$productsReviewed[] = matchProducts($i);
 				}
 			}
