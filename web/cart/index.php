@@ -35,7 +35,7 @@
 				//Loop through array to remove item from the array, if it exists in the array
 				$_SESSION["productsReviewed"] = array_filter($_SESSION["productsReviewed"], function($delete){
 					return $delete !== $prodDelete;
-				}
+				});
 				
 				
 				/*for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
