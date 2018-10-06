@@ -32,7 +32,7 @@
 			if (isset($_SESSION["productsReviewed"])) {
 				//check to see if an item is being deleted
 				$prodDelete = $_REQUEST['prodDelete'];
-				print_r $_SESSION["productsReviewed"];
+				print_r($_SESSION["productsReviewed"]);
 				break;				
 				//$_SESSION["productsReviewed"] = array_filter($_SESSION["productsReviewed"], $prodDelete);
 			} else {
@@ -66,19 +66,19 @@
 			break;
         case 'viewCartBrowse':
 		default:
-		/*
-			Create a list of things to sell
-			Loop over the list and create a form with the items in it. 
-			Include item, id, cost, count
-		*/
-		//Clear Session variables
-		unset($_SESSION["productsReviewed"]);
-		unset($_SESSION["productsReceived"]);
-		//Get products list
-		$products = getProducts();
-			
-		//Build the display info for the cart browse		
-		$displayProd = buildCartBrowseDisplay($products);
+			/*
+				Create a list of things to sell
+				Loop over the list and create a form with the items in it. 
+				Include item, id, cost, count
+			*/
+			//Clear Session variables
+			unset($_SESSION["productsReviewed"]);
+			unset($_SESSION["productsReceived"]);
+			//Get products list
+			$products = getProducts();
+				
+			//Build the display info for the cart browse		
+			$displayProd = buildCartBrowseDisplay($products);
 		
             include '../view/cart-browse.php';
     }
