@@ -38,7 +38,8 @@
 					echo "for loop hit!<br/>";
 					echo $i . " i<br/>";
 					echo count($_SESSION["productsReviewed"]) . "count<br/>";
-					echo $_SESSION["productsReviewed"][$i];
+					echo $_SESSION["productsReviewed"][$i] . "<br/>";
+					print_r($_SESSION["productsReviewed"]) . "<br/>";
 					if ($_SESSION["productsReviewed"][$i] == $prodDelete) {
 						unset($_SESSION["productsReviewed"][$i]);
 						
