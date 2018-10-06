@@ -25,6 +25,13 @@ function buildCartReviewDisplay($products){
     return $rd;
 }
 
+function matchProducts($i){
+	//Receives a number and finds the product 
+	$products = getProducts();
+	$product = $products[$i];
+	return $product;
+}
+
 function buildCartConfirmDisplay($products){
 //This area is for building the display of the Cart Confirm
 

@@ -36,9 +36,15 @@
 		
 		//Remove everything without a value of 1 then send to view!!!
 		
-		$productsReceived = array_filter(1);
+		
+		$productsReviewed = array();
+		for ($i = 0; $i > $sizeof($productsReceived);  $i++) {
+			if ($productsReceived[$i] = 1) {
+				$productsReviewed = matchProducts($i);
+		}
+		
 		//debug code for pulling products out of the array	
-		print_r($productsReceived);
+		print_r($productsReviewed);
 		break;
 		$displayReview = buildCartReviewDisplay($productsReview);
 		
