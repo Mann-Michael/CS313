@@ -15,7 +15,7 @@
             <div class="floatpage" id="default" >
 				<form method="post" action="index.php">
 					<label>First Name: </label><br>
-					<input type="text" name="clientFirstName" id="clientFirstName" <?php if(isset($_SESSION["clientFirstName"])){echo 'value="$_SESSION["clientFirstName"]"';} ?> required ><br>
+					<input type="text" name="clientFirstName" id="clientFirstName" <?php if(isset($_SESSION["clientFirstName"])){echo "value='" . $_SESSION["clientFirstName"] . "'";} ?> required ><br>
 					<label>Last Name: </label><br>
 					<input type="text" name="clientLastName" id="clientLastName" <?php if(isset($clientLastName)){echo "value='$clientLastName'";} ?> required ><br>
 					<label>Street Address: </label><br>

@@ -36,14 +36,16 @@ function buildCartConfirmDisplay(){
 //This area is for building the display of the Cart Confirm
 
 	//Build Address Area
-    $cd = '<label for="' . $_SESSION["clientFirstName"] . '">' . $_SESSION["clientFirstName"] . '</label>';
+    $cd = '<h2>Address Information</h2>'; 
+	$cd .= '<label for="' . $_SESSION["clientFirstName"] . '">' . $_SESSION["clientFirstName"] . '</label> ';
 	$cd .= '<label for="' . $_SESSION["clientLastName"] . '">' . $_SESSION["clientLastName"] . '</label><br>';
 	$cd .= '<p>' . $_SESSION["clientAddress"] . '</p>';
 	$cd .= '<p>' . $_SESSION["clientCity"] . ', ' . $_SESSION["clientState"] . '   ' . $_SESSION["clientZip"] . '</p>';
-	$cd .= '<p>' . $_SESSION["clientAddress"] . '</p>';
 	//Build Products
-    foreach ($_SESSION["productsReviewed"] as $product) {
-		$cd .= '<label for="' . $product . '">' . $product . '</label>';
+    $cd .= '<h2>Products Ordered</h2>';
+	$cd .= '<ul>';
+	foreach ($_SESSION["productsReviewed"] as $product) {
+		$cd .= '<li><label for="' . $product . '">' . $product . '</label></li>';
     }
     $cd .= '</ul>';
 	

@@ -14,6 +14,7 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php if (isset($displayConfirm)){echo $displayConfirm;}?>
+				<br>
 				<a href="/cart/index.php?action=viewCartCheckout"> Back to Review <a>
             </div>
 		</main>
