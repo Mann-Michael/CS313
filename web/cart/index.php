@@ -31,7 +31,7 @@
 			//See if there is a products reviewed cart already
 			if (isset($_SESSION["productsReviewed"])) {
 				//check to see if an item is being deleted
-				$prodDelete = $_GET['prodDelete'];
+				$prodDelete = $_REQUEST['prodDelete'];
 				echo $prodDelete;
 				$_SESSION["productsReviewed"] = array_filter($_SESSION["productsReviewed"]); 
 			} else {
