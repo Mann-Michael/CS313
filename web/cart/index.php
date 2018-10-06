@@ -33,7 +33,6 @@
 				//check to see if an item is being deleted
 				$prodDelete = $_GET['prodDelete'];
 				echo $prodDelete;
-				break;
 				$_SESSION["productsReviewed"] = array_filter($_SESSION["productsReviewed"], 
 			} else {
 				// Fill an array with all products and values from POST
