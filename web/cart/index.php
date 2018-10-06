@@ -36,9 +36,9 @@
 		
 		//Remove everything without a value of 1 then send to view!!!
 		
-		$productsReview = array_filter(1);
+		$productsReceived = array_filter(1);
 		//debug code for pulling products out of the array	
-		print_r($productsReview);
+		print_r($productsReceived);
 		break;
 		$displayReview = buildCartReviewDisplay($productsReview);
 		
