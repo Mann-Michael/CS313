@@ -34,7 +34,7 @@
 				$prodDelete = $_REQUEST['prodDelete'];
 				//Loop through array to remove item from the array, if it exists in the array
 				$phProductsReviewed = array_filter($_SESSION["productsReviewed"], function($delete){
-					return $delete !== $prodDelete;
+					return $delete != $prodDelete;
 				});
 				
 				$_SESSION["productsReviewed"] = $phProductsReviewed;
