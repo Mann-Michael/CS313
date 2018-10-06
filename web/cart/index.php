@@ -19,6 +19,10 @@
     }
 
     switch ($action){
+		case 'procCartDeleteItem':
+		
+			include '../view/cart-review.php';
+			break;
 		case 'viewCartReview':
 			/*
 				get all info that is posted and add it to an array in the session
@@ -27,25 +31,19 @@
 				if the user likes this, they continue and go to checkout 
 				if they want to adjust the cart, they can return to it
 			*/
-		
+			
+			// Fill an array with all products and values from POST
 			$productsReceived = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
-
-			//debug code for pulling products out of the array	
-			//print_r($productsReceived);
-			//break;
 			
-			//Remove everything without a value of 1 then send to view!!!
-			
+			//CReate new array and remove the items that should not be in the cart
+			//1 = Added to cart, 0 = not. 
 			$productsReviewed = array();
 			for ($i = 0; $i < count($productsReceived); $i++){
 				if ($productsReceived[$i] == 1) {
 					$productsReviewed[] = matchProducts($i);
 				}
 			}
-			
-			//debug code for pulling products out of the array	
-			//print_r($productsReviewed);
-			//break;
+			//Build the view
 			$displayReview = buildCartReviewDisplay($productsReviewed);
 		
 			include '../view/cart-review.php';

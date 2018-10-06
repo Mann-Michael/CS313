@@ -20,7 +20,8 @@ function buildCartReviewDisplay($products){
 	$rd = "";
 	foreach ($products as $product) {
 		$rd .= '<label for="' . $product . '">' . $product . '</label>';
-		$rd .= '<input type="checkbox" name="' . $product . '" value="0"><br>';
+		$rd .= '<input type="submit" name="btn' . $product . '"><br>';
+		$rd .= '<input type="hidden" name="action" value="viewCartReview&prodDelete=' . $product . '"'>
 	}
     return $rd;
 }
