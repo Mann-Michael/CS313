@@ -28,25 +28,24 @@
 				if they want to adjust the cart, they can return to it
 			*/
 		
-		$productsReceived = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
+			$productsReceived = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
 
-		//debug code for pulling products out of the array	
-		//print_r($productsReceived);
-		//break;
-		
-		//Remove everything without a value of 1 then send to view!!!
-		
-		
-		$productsReviewed = array();
-		for ($i = 0; $i > $sizeof($productsReceived);  $i++) {
-			if ($productsReceived[$i] = 1) {
-				$productsReviewed = matchProducts($i);
-		}
-		
-		//debug code for pulling products out of the array	
-		print_r($productsReviewed);
-		break;
-		$displayReview = buildCartReviewDisplay($productsReview);
+			//debug code for pulling products out of the array	
+			//print_r($productsReceived);
+			//break;
+			
+			//Remove everything without a value of 1 then send to view!!!
+			
+			$productsReviewed = array();
+			for ($i = 0; $i > $sizeof($productsReceived); $i++){
+				if ($productsReceived[$i] = 1) {
+					$productsReviewed = matchProducts($i);
+			}
+			
+			//debug code for pulling products out of the array	
+			print_r($productsReviewed);
+			break;
+			$displayReview = buildCartReviewDisplay($productsReviewed);
 		
 			include '../view/cart-review.php';
 			break;
