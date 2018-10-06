@@ -31,15 +31,12 @@
 		$productsReceived = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
 
 		//debug code for pulling products out of the array	
-		print_r($productsReceived);
-		break;
+		//print_r($productsReceived);
+		//break;
 		
 		//Remove everything without a value of 1 then send to view!!!
 		
-		$numbers = 1;
-		$productsReceived = array_filter($numbers, function($number) {
-			return $number = 1;
-		});
+		$productsReceived = array_filter(1);
 		//debug code for pulling products out of the array	
 		print_r($productsReceived);
 		break;
