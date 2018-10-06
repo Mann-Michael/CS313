@@ -37,7 +37,7 @@
 			//Remove everything without a value of 1 then send to view!!!
 			
 			$productsReviewed = array();
-			for ($i = 0; $i > $sizeof($productsReceived); $i++){
+			for ($i = 0; $i > count($productsReceived); $i++){
 				if ($productsReceived[$i] = 1) {
 					$productsReviewed = matchProducts($i);
 				}
