@@ -35,9 +35,10 @@
 				//Check array to remove deleted item from the array, if it exists
 				//this is buggy. If the array count gets less than the ID of the element it wants to delete, it doesnt find it. 
 				for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
-					echo "for loop hit!";
-					echo $i . " i";
-					echo count($_SESSION["productsReviewed"]) . "count";
+					echo "for loop hit!<br/>";
+					echo $i . " i<br/>";
+					echo count($_SESSION["productsReviewed"]) . "count<br/>";
+					echo $_SESSION["productsReviewed"][$i];
 					if ($_SESSION["productsReviewed"][$i] == $prodDelete) {
 						unset($_SESSION["productsReviewed"][$i]);
 						
