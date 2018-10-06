@@ -38,11 +38,11 @@
 			
 			$productsReviewed = array();
 			for ($i = 0; $i < count($productsReceived); $i++){
-				echo $i;
-				echo $productsReceived[$i];
+				echo $i. "<br>";
+				echo $productsReceived[$i]. "<br>";
 					$products = getProducts();
 					$product = $products[$i];
-				echo $product;	
+				echo $product. "<br>END <br>";	
 				if ($productsReceived[$i] = 1) {
 					$productsReviewed[] = matchProducts($i);
 				}
