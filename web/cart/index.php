@@ -32,14 +32,28 @@
 			if (isset($_SESSION["productsReviewed"])) {
 				//Set variable for deleted item, if such an item exists
 				$prodDelete = $_REQUEST['prodDelete'];
-				//Loop through array to remove item from the array, if it exists in the array
+				//Check array to remove deleted item from the array, if it exists
+				foreach($_SESSION["productsReviewed"] as $elementKey => $element) {
+					foreach($element as $valueKey => $value) {
+						if($value == $prodDelete){
+							//delete this particular object from the $array
+							unset($array[$elementKey]);
+						} 
+					}
+				}
+				print_r($_SESSION["productsReviewed"]);
+				
+				
+				/* this does not work and i dont know why
 				$phProductsReviewed = array_filter($_SESSION["productsReviewed"], function($delete){
 					return $delete != $prodDelete;
 				});
 				print_r($_SESSION["productsReviewed"]);
-				print_r($phProductsReviewed);
+				print_r($phProductsReviewed)
 				
-				/*for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
+				this works but is buggy 
+				
+				for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
 					echo "for loop hit!";
 					echo $i . " i";
 					echo count($_SESSION["productsReviewed"]) . "count";
