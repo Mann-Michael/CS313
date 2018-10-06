@@ -37,10 +37,7 @@
 					if ($_SESSION["productsReviewed"][$i] == $prodDelete) {
 						unset($_SESSION["productsReviewed"][$i]);
 					}
-				}
-				
-				print_r($_SESSION["productsReviewed"]);
-				break;				
+				}	
 			} else {
 				// Fill an array with all products and values from POST
 				$_SESSION["productsReceived"] = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
