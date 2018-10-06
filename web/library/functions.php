@@ -26,6 +26,11 @@ function buildCartReviewDisplay($products){
     return $rd;
 }
 
+function getProductIndex($product) {
+	$index = array_search($product, $_SESSION["productsReviewed"]);
+	return $index;
+}
+
 function matchProducts($i){
 	//Receives a number and finds the product 
 	$products = getProducts();
