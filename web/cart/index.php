@@ -34,6 +34,11 @@
 				$prodDelete = $_REQUEST['prodDelete'];
 				//Check array to remove deleted item from the array, if it exists
 				//this is buggy. If the array count gets less than the ID of the element it wants to delete, it doesnt find it. 
+				
+				$index = getProductIndex($prodDelete);
+				echo $index;
+				
+				/*
 				for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
 					echo "for loop hit!<br/>";
 					echo $i . " i<br/>";
@@ -47,6 +52,7 @@
 						break;
 					}
 				}
+				*/
 			} else {
 				// Fill an array with all products and values from POST
 				$_SESSION["productsReceived"] = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
