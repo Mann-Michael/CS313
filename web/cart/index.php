@@ -36,6 +36,9 @@
 				for ($i = 0; $i < count($_SESSION["productsReviewed"]); $i++){
 					if ($_SESSION["productsReviewed"][$i] == $prodDelete) {
 						unset($_SESSION["productsReviewed"][$i]);
+						
+						print_r($_SESSION["productsReviewed"]);
+						break;
 					}
 				}	
 			} else {
