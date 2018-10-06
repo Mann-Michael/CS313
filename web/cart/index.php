@@ -44,7 +44,7 @@
 			}
 			
 			//debug code for pulling products out of the array	
-			//print_r($productsReviewed);
+			print_r($productsReviewed);
 			break;
 			$displayReview = buildCartReviewDisplay($productsReviewed);
 		
