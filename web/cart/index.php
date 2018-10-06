@@ -33,13 +33,8 @@
 				//Set variable for deleted item, if such an item exists
 				$prodDelete = $_REQUEST['prodDelete'];
 				//Loop through array to remove item from the array, if it exists in the array
-				foreach ($_SESSION["productsReviewed"] as $product) {
-					if ($product == $prodDelete) {
-						unset($product);
-						echo $product;
-						print_r($_SESSION["productsReviewed"]);
-						break;
-					}
+				$_SESSION["productsReviewed"] = array_filter($_SESSION["productsReviewed"], function($delete){
+					return $delete !== $prodDelete;
 				}
 				
 				
