@@ -32,19 +32,21 @@ function matchProducts($i){
 	return $product;
 }
 
-function buildCartConfirmDisplay($products){
+function buildCartConfirmDisplay(){
 //This area is for building the display of the Cart Confirm
 
-/*    $cd = '<ul id="prod-display">';
-    foreach ($products as $product) {
-        $cd .= '<li>';
-        $cd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'></a>";
-        $cd .= '<hr>';
-        $cd .= "<a href='/products/index.php?action=prodSpec&item=$product[invId]'> <h2>$product[invName]</h2></a>";
-        $cd .= '</li>';
+	//Build Address Area
+    $cd = '<label for="' . $_SESSION["clientFirstName"] . '">' . $_SESSION["clientFirstName"] . '</label>';
+	$cd .= '<label for="' . $_SESSION["clientLastName"] . '">' . $_SESSION["clientLastName"] . '</label><br>';
+	$cd .= '<p>' . $_SESSION["clientAddress"] . '</p>';
+	$cd .= '<p>' . $_SESSION["clientCity"] . ', ' . $_SESSION["clientState"] . '   ' . $_SESSION["clientZip"] . '</p>';
+	$cd .= '<p>' . $_SESSION["clientAddress"] . '</p>';
+	//Build Products
+    foreach ($_SESSION["productsReviewed"] as $product) {
+		$cd .= '<label for="' . $product . '">' . $product . '</label>';
     }
     $cd .= '</ul>';
-	*/
+	
     return $cd;
 }
 

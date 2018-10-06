@@ -13,7 +13,8 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<!-- content goes here -->
+				<?php if (isset($displayConfirm)){echo $displayConfirm;}?>
+				<a href="/cart/index.php?action=viewCartCheckout"> Back to Review <a>
             </div>
 		</main>
     </body>

@@ -67,11 +67,25 @@
         case 'viewCartCheckout':
 			/*
 				User inputs personal info and stores it in the session
-			
 			*/
 			include '../view/cart-checkout.php';
 			break;
 		case 'viewCartConfirm':
+			/*
+				Set address info from POST into the session
+				Display Address info
+				Display Products
+				Button back
+			*/
+			$_SESSION["clientFirstName"] = htmlspecialchars($_POST['clientFirstName']);
+			$_SESSION["clientLastName"] = htmlspecialchars($_POST['clientLastName']);
+			$_SESSION["clientAddress"] = htmlspecialchars($_POST['clientAddress']);
+			$_SESSION["clientCity"] = htmlspecialchars($_POST['clientCity']);
+			$_SESSION["clientState"] = htmlspecialchars($_POST['clientState']);
+			$_SESSION["clientZip"] = htmlspecialchars($_POST['clientZip']);
+
+			$displayConfirm = buildCartConfirmDisplay();
+			
 			include '../view/cart-confirm.php';		
 			break;
         case 'viewCartBrowse':
