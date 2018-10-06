@@ -17,10 +17,12 @@
 				    <div class="field-wrapper">
                         <label>First Name: </label><br>
                         <input type="text" name="clientFirstName" id="clientFirstName" <?php if(isset($clientFirstName)){echo "value='$clientFirstName'";} ?> required ><br>
-                    </div>
-				    <div class="field-wrapper">
+						
                         <label>Last Name: </label><br>
                         <input type="text" name="clientLastName" id="clientLastName" <?php if(isset($clientLastName)){echo "value='$clientLastName'";} ?> required ><br>
+                    </div>
+				    <div class="field-wrapper">
+
                     </div>
 				    <div class="field-wrapper">
                         <label>Street Address: </label><br>
