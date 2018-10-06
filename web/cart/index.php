@@ -39,8 +39,8 @@
 			$productsReviewed = array();
 			for ($i = 0; $i > count($productsReceived); $i++){
 				if ($productsReceived[$i] = 1) {
-					$productsReviewed[] = matchProducts($i);
-					print_r($productsReviewed);
+					//$productsReviewed[] = matchProducts($i);
+					echo $productsReceived[$i];
 				}
 			}
 			
