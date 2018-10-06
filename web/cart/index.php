@@ -36,12 +36,7 @@
 		
 		//Remove everything without a value of 1 then send to view!!!
 		
-		$productsReview = array();
-		foreach ($productsReceived as $product => $amount) {
-			if ($amount = 1) {
-				$productsReview[] = $product => $amount;
-			}
-		}
+		$productsReview = array_filter(1);
 		//debug code for pulling products out of the array	
 		print_r($productsReview);
 		break;
