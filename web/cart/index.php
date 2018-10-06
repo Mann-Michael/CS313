@@ -36,6 +36,7 @@
 				foreach ($_SESSION["productsReviewed"] as $product) {
 					if ($product == $prodDelete) {
 						unset($product);
+						echo $product;
 						print_r($_SESSION["productsReviewed"]);
 						break;
 					}
