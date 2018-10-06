@@ -26,16 +26,6 @@ function buildCartReviewDisplay($products){
     return $rd;
 }
 
-function getProductIndex($product) {
-	for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
-		if ($_SESSION["productsReviewed"][$i] == $product) {			
-			$index = $_SESSION["productsReviewed"][$i];
-			break;
-		}
-	}
-	return $index;
-}
-
 function matchProducts($i){
 	//Receives a number and finds the product 
 	$products = getProducts();
