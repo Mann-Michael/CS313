@@ -33,7 +33,16 @@
 				//Set variable for deleted item, if such an item exists
 				$prodDelete = $_REQUEST['prodDelete'];
 				//Loop through array to remove item from the array, if it exists in the array
-				for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
+				foreach ($_SESSION["productsReviewed"] as $product) {
+					if ($_SESSION["productsReviewed"][$i] == $prodDelete) {
+						unset($_SESSION["productsReviewed"][$i]);
+						print_r($_SESSION["productsReviewed"]);
+						break;
+					}
+				}
+				
+				
+				/*for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
 					echo "for loop hit!";
 					echo $i . " i";
 					echo count($_SESSION["productsReviewed"]) . "count";
@@ -43,7 +52,7 @@
 						print_r($_SESSION["productsReviewed"]);
 						break;
 					}
-				}	
+				}*/	
 			} else {
 				// Fill an array with all products and values from POST
 				$_SESSION["productsReceived"] = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
