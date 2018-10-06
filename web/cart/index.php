@@ -37,7 +37,9 @@
 		//Remove everything without a value of 1 then send to view!!!
 		
 		$number = 1;
-		$productsReceived = array_filter($number);
+		$productsReceived = array_filter($number, function($number) {
+			return $number = 1;
+		});
 		//debug code for pulling products out of the array	
 		print_r($productsReceived);
 		break;
