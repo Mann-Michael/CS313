@@ -69,7 +69,9 @@
 			Loop over the list and create a form with the items in it. 
 			Include item, id, cost, count
 		*/
-		
+		//Clear Session variables
+		unset($_SESSION["productsReviewed"]);
+		unset($_SESSION["productsReceived"]);
 		//Get products list
 		$products = getProducts();
 			
