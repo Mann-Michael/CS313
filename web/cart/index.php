@@ -28,12 +28,23 @@
 				if they want to adjust the cart, they can return to it
 			*/
 		
-		$productsReview = array('product1' => $_POST['product1'], 'product2' => $_POST['product2'], 'product3' => $_POST['product3'], 'product4' => $_POST['product4'], 'product5' => $_POST['product5']);
+		$productsReceived = array('product1' => $_POST['product1'], 'product2' => $_POST['product2'], 'product3' => $_POST['product3'], 'product4' => $_POST['product4'], 'product5' => $_POST['product5']);
 
 		//debug code for pulling products out of the array	
-		//print_r($products);
+		//print_r($productsReceived);
 		//break;
 		
+		//Remove everything without a value of 1 then send to view!!!
+		
+		$productsReview = array();
+		foreach ($productsReceived as $product => $amount) {
+			if ($amount = 1) {
+				$productsReview = $product;
+			}
+		}
+		//debug code for pulling products out of the array	
+		print_r($productsReview);
+		break;
 		$displayReview = buildCartReviewDisplay($productsReview);
 		
 			include '../view/cart-review.php';
