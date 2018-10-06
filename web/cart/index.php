@@ -38,18 +38,14 @@
 			
 			$productsReviewed = array();
 			for ($i = 0; $i < count($productsReceived); $i++){
-				echo $i. "<br>";
-				echo $productsReceived[$i]. "<br>";
-					$product = matchProducts($i);
-				echo $product. "<br>END <br>";	
 				if ($productsReceived[$i] == 1) {
 					$productsReviewed[] = matchProducts($i);
 				}
 			}
 			
 			//debug code for pulling products out of the array	
-			print_r($productsReviewed);
-			break;
+			//print_r($productsReviewed);
+			//break;
 			$displayReview = buildCartReviewDisplay($productsReviewed);
 		
 			include '../view/cart-review.php';
