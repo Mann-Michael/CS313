@@ -15,6 +15,7 @@
             <div class="floatpage" id="default" >
 			<form method="post" action="index.php">
 				<?php if (isset($displayReview)){echo $displayReview;}?>
+				<a href="/cart/index.php"> Back to Products <a>
 				<input type="submit" name="btnCheckout" value="Checkout">
 				<input type="hidden" name="action" value="viewCartCheckout">
 			</form>
