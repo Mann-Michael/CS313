@@ -33,26 +33,7 @@
 				//Set variable for deleted item, if such an item exists
 				$prodDelete = $_REQUEST['prodDelete'];
 				//Check array to remove deleted item from the array, if it exists
-				foreach($_SESSION["productsReviewed"] as $elementKey => $element) {
-					foreach($element as $valueKey => $value) {
-						if($value == $prodDelete){
-							//delete this particular object from the $array
-							unset($array[$elementKey]);
-						} 
-					}
-				}
-				print_r($_SESSION["productsReviewed"]);
-				
-				
-				/* this does not work and i dont know why
-				$phProductsReviewed = array_filter($_SESSION["productsReviewed"], function($delete){
-					return $delete != $prodDelete;
-				});
-				print_r($_SESSION["productsReviewed"]);
-				print_r($phProductsReviewed)
-				
-				this works but is buggy 
-				
+				//this is buggy. If the array count gets less than the ID of the element it wants to delete, it doesnt find it. 
 				for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
 					echo "for loop hit!";
 					echo $i . " i";
@@ -63,7 +44,7 @@
 						print_r($_SESSION["productsReviewed"]);
 						break;
 					}
-				}*/	
+				}
 			} else {
 				// Fill an array with all products and values from POST
 				$_SESSION["productsReceived"] = array($_POST['product1'], $_POST['product2'], $_POST['product3'], $_POST['product4'], $_POST['product5']);
