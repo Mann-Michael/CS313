@@ -39,7 +39,7 @@
 		$productsReview = array();
 		foreach ($productsReceived as $product => $amount) {
 			if ($amount = 1) {
-				$productsReview = $product;
+				$productsReview[] = $product => $amount;
 			}
 		}
 		//debug code for pulling products out of the array	
