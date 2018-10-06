@@ -36,8 +36,8 @@
 				$phProductsReviewed = array_filter($_SESSION["productsReviewed"], function($delete){
 					return $delete != $prodDelete;
 				});
-				
-				$_SESSION["productsReviewed"] = $phProductsReviewed;
+				echo $_SESSION["productsReviewed"];
+				echo $phProductsReviewed;
 				
 				/*for ($i = 0; $i <= count($_SESSION["productsReviewed"]); $i++){
 					echo "for loop hit!";
