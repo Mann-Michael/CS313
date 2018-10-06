@@ -40,8 +40,7 @@
 			for ($i = 0; $i < count($productsReceived); $i++){
 				echo $i. "<br>";
 				echo $productsReceived[$i]. "<br>";
-					$products = getProducts();
-					$product = $products[$i];
+					$product = matchProducts($i);
 				echo $product. "<br>END <br>";	
 				if ($productsReceived[$i] = 1) {
 					$productsReviewed[] = matchProducts($i);
