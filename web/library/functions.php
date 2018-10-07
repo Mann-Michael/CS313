@@ -45,7 +45,7 @@ function buildCartConfirmDisplay(){
     $cd = '<h2>Address Information</h2>'; 
 	$cd .= '<label for="' . $_SESSION["clientFirstName"] . '">' . $_SESSION["clientFirstName"] . '</label> ';
 	$cd .= '<label for="' . $_SESSION["clientLastName"] . '">' . $_SESSION["clientLastName"] . '</label><br>';
-	$cd .= '<p style=">' . $_SESSION["clientAddress"] . '</p>';
+	$cd .= '<p>' . $_SESSION["clientAddress"] . '</p>';
 	$cd .= '<p>' . $_SESSION["clientCity"] . ', ' . $_SESSION["clientState"] . '   ' . $_SESSION["clientZip"] . '</p>';
 	//Build Products
     $cd .= '<h2>Products Ordered</h2>';
