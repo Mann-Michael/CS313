@@ -65,7 +65,7 @@
                 }
                  $swimmerList .= '</tbody></table>';
                 } else {
-                 $message = "<p class='notify'>Sorry, no swimmers were returned.</p>";
+                 $swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
                 }
 		
             include '../view/swim-home.php';
