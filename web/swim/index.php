@@ -46,16 +46,13 @@
 			  echo 'Error!: ' . $ex->getMessage();
 			  die();
 			}
-			function getSwimmers() {
 			$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:id AND name=:name');
 			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			return $rows;
-			}
 			
-			$swimmers = getSwimmers();
+			$swimmers = $rows;
             if(count($swimmers) > 0){
 				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
@@ -64,11 +61,12 @@
                 $swimmerList .= '</thead>';
                 $swimmerList .= '<tbody>';
                 foreach ($swimmers as $swimmer) {
-                 $swimmerList .= "<tr><td>$swimmer[name]</td>";
+					$swimmerList .= "<tr><td>$swimmer[name]</td>";
                 }
-                 $swimmerList .= '</tbody></table>';
+					$swimmerList .= '</tbody></table>';
                 } else {
-                 $swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
+					echo count($swimmers);
+					$swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
                 }
 		
             include '../view/swim-home.php';
