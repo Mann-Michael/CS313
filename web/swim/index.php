@@ -67,7 +67,7 @@
                 $swimmerList .= '</thead>';
                 $swimmerList .= '<tbody>';
                 foreach ($swimmers as $swimmer) {
-					$swimmerList .= "<tr><td>$swimmer['name']</td>";
+					$swimmerList .= "<tr><td>$swimmer[name]</td>";
                 }
 					$swimmerList .= '</tbody></table>';
                 } else {
