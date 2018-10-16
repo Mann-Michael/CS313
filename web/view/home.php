@@ -16,7 +16,7 @@
 				<ul>
 					<li><a href="/team/3/teamActivity.php">Team Assignment Week 3</a></li>
 					<li><a href="/cart/index.php">Shopping Cart</a></li>
-					<li><a href="swim/index/php">Swim Tracker</a></li>
+					<li><a href="swim/index.php">Swim Tracker</a></li>
 					<li><a href="#">Link 4</a></li>
 				</ul>
             </div>
