@@ -4,7 +4,7 @@
  * Database Connections
  */
 
-function dbConnect(){
+/*function dbConnect(){
 	try
 	{
 	  $dbUrl = getenv('DATABASE_URL');
