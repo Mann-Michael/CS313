@@ -46,15 +46,18 @@
 			  echo 'Error!: ' . $ex->getMessage();
 			  die();
 			}
-			
+			function getSwimmers() {
 			$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:id AND name=:name');
 			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-			$swimmers = $rows;
+			return $rows;
+			}
+			
+			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
+				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
                 $swimmerList .= '<tr><th>Swimmer</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
