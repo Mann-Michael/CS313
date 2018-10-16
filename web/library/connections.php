@@ -29,9 +29,3 @@ function dbConnect(){
 }
 
 dbConnect();
-
-foreach ($db->query('SELECT name FROM swimmer') as $row)
-{
-  echo 'name: ' . $row['name'];
-  echo '<br/>';
-}

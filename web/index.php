@@ -19,4 +19,11 @@ switch ($action){
         include 'view/home.php';
 }
 
+
+
+foreach ($db->query('SELECT name FROM swimmer') as $row)
+{
+  echo 'name: ' . $row['name'];
+  echo '<br/>';
+}
 ?>
