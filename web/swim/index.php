@@ -47,8 +47,11 @@
 			  die();
 			}
 			
-			$swimmers= $db->query('SELECT name FROM swimmer');
-			$swimmerList = $statement->fetchAll(PDO::FETCH_ASSOC);
+			$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:id AND name=:name');
+			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+			$stmt->execute();
+			$swimmerList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		
 
