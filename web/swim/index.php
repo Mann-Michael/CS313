@@ -65,7 +65,8 @@
                 }
 					$swimmerList .= '</tbody></table>';
                 } else {
-					echo count($swimmers);
+					$count = count($swimmers);
+					echo $count;
 					$swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
                 }
 		
