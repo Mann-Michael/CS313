@@ -22,6 +22,9 @@
 				
 				<?php
 				
+				// Get the connections library
+				require_once 'library/connections.php';
+				
 				foreach ($db->query('SELECT name FROM swimmer') as $row){
 					echo 'name: ' . $row['name'];
 					echo '<br/>';
