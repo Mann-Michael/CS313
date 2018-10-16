@@ -5,6 +5,9 @@
 // Get the functions library
 require_once 'library/functions.php';
 
+// Get the connections library
+require_once 'library/connections.php';
+
 $action = filter_input(INPUT_POST, 'action');
 
 if ($action == NULL){
