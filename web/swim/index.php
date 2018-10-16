@@ -47,7 +47,7 @@
 			  die();
 			}
 			
-			$swimmers= $db->query('SELECT name FROM swimmers');
+			$swimmers= $db->query('SELECT name FROM swimmer');
 			$swimmerList = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 		
