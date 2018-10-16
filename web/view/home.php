@@ -19,6 +19,15 @@
 					<li><a href="#">Link 3</a></li>
 					<li><a href="#">Link 4</a></li>
 				</ul>
+				
+				<?php
+				
+				foreach ($db->query('SELECT name FROM swimmer') as $row){
+					echo 'name: ' . $row['name'];
+					echo '<br/>';
+				}
+
+				?>
             </div>
 		</main>
     </body>
