@@ -9,16 +9,11 @@
         </header>
         <nav>
 			<?php include ("common/nav.php"); ?>
-			<h1 id="title">CS 313 Assignments</h1>
+			<h1 id="title">Swim Tracker</h1>
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<ul>
-					<li><a href="/team/3/teamActivity.php">Team Assignment Week 3</a></li>
-					<li><a href="/cart/index.php">Shopping Cart</a></li>
-					<li><a href="swim/index/php">Swim Tracker</a></li>
-					<li><a href="#">Link 4</a></li>
-				</ul>
+				<?php if (isset($swimmerList)) {echo $swimmerList;}?>
             </div>
 		</main>
     </body>
