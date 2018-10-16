@@ -53,6 +53,7 @@
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
 			$swimmers = $rows;
+			print_r($swimmers);
             if(count($swimmers) > 0){
 				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
