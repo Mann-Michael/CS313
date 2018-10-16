@@ -1,0 +1,25 @@
+CREATE TABLE swimmer (
+id SERIAL PRIMARY KEY, 
+name VARCHAR (255) NOT NULL, 
+age INT, 
+gender BOOLEAN NOT NULL, 
+team VARCHAR (255) NOT NULL, 
+email VARCHAR (255) NOT NULL, 
+password VARCHAR (255) NOT NULL
+);
+CREATE TABLE event (
+id SERIAL PRIMARY KEY,
+strokeid INT REFERENCES stroke(id), 
+distanceid INT REFERENCES distance(id),
+time FLOAT (3) NOT NULL,
+location VARCHAR (255) NOT NULL,
+date DATE NOT NULL
+);
+CREATE TABLE stroke (
+id SERIAL PRIMARY KEY, 
+stroketype VARCHAR (255) NOT NULL
+);
+CREATE TABLE distance (
+id SERIAL PRIMARY KEY, 
+distance INT NOT NULL
+);
