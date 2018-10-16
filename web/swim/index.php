@@ -53,8 +53,20 @@
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-			$swimmerList = $rows[0][1];
-
+			$swimmers = $rows;
+            if(count($swimmers) > 0){
+                $swimmerList = '<table>';
+                $swimmerList .= '<thead>';
+                $swimmerList .= '<tr><th>Swimmer</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
+                $swimmerList .= '</thead>';
+                $swimmerList .= '<tbody>';
+                foreach ($swimmers as $swimmer) {
+                 $swimmerList .= "<tr><td>$swimmer[name]</td>";
+                }
+                 $swimmerList .= '</tbody></table>';
+                } else {
+                 $message = "<p class='notify'>Sorry, no swimmers were returned.</p>";
+                }
 		
             include '../view/swim-home.php';
     }
