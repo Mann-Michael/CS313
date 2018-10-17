@@ -47,14 +47,7 @@
 			  die();
 			}
 			
-			$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:id AND name=:name AND age=:age AND gender=:gender AND team=:team AND email=:email AND password=:password');
-			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-			$stmt->bindValue(':age', $age, PDO::PARAM_INT);
-			$stmt->bindValue(':gender', $gender, PDO::PARAM_BOOL);
-			$stmt->bindValue(':team', $team, PDO::PARAM_STR);
-			$stmt->bindValue(':email', $email, PDO::PARAM_STR);
-			$stmt->bindValue(':password', $password, PDO::PARAM_STR);
+			$stmt = $db->prepare('SELECT * FROM swimmer');
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
