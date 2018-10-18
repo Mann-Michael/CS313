@@ -37,13 +37,20 @@
 	//Model Information
 	
 	//Get all swimmers
-		$db = dbConnect();
-		$stmt = $db->prepare('SELECT * FROM swimmer');
-		$stmt->execute();
-		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$db = dbConnect();
+	$stmt = $db->prepare('SELECT * FROM swimmer');
+	$stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
 	//Get single swimmer profile
-	//Get top 3 swim times per event
+	$stmt = $db->prepare('SELECT * FROM swimmer');
+	$stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
+	//Get top 3 swim times per event
+	$stmt = $db->prepare('SELECT * FROM swimmer');
+	$stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);	
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
@@ -60,7 +67,7 @@
 			
 			
 
-			
+			/*
 			print_r($rows);			
 			$swimmers = $rows;
             if(count($rows) > 0){
@@ -76,7 +83,7 @@
 					$swimmerList .= '</tbody></table>';
                 } else {
 					$swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
-                }
+                }*/
 		
             include '../view/swim-home.php';
     }
