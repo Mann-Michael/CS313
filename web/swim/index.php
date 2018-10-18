@@ -12,7 +12,6 @@
     //require_once '../model/swim-model.php';
 
 	//Database Connection
-	global $db;
 	try{
 		$dbUrl = getenv('DATABASE_URL');
 		$dbOpts = parse_url($dbUrl);
@@ -36,12 +35,12 @@
 	VALUES
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	//Get all swimmers
-	function getSwimmers(){
+	//function getSwimmers(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return $swimmers;
-	}
+		//return $swimmers;
+	//}
 	//Get single swimmer profile
 	/*function getProfile(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
@@ -71,7 +70,7 @@
 		default:
 
 
-			$swimmers = getSwimmers();
+			//$swimmers = getSwimmers();
             if(count($swimmers) > 0){
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
