@@ -33,7 +33,7 @@
 	//Model Information
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)
 	VALUES
-	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');
+	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	
 	//Get all swimmers (make a function later)
 		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
