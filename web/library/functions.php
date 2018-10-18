@@ -58,6 +58,12 @@ function buildCartConfirmDisplay(){
     return $cd;
 }
 
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+	return $data;
+}
 
 function buildSwimmerList($swimmers){
 		if(count($swimmers) > 0){
@@ -67,7 +73,6 @@ function buildSwimmerList($swimmers){
 			$sl .= '</thead>';
 			$sl .= '<tbody>';
 			foreach ($swimmers as $swimmer) {
-				//$sl .= "<tr><td>$swimmer[name]</td>";
 				$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td>';
 			}
 			$sl .= '</tbody></table>';
@@ -77,8 +82,8 @@ function buildSwimmerList($swimmers){
 	return $sl;
 }
 
-function buildSwimmerProfile(){
-	$sp;
+function buildSwimmerProfile($swimmerId){
+	$sp = "you did it";
 	return $sp;
 }
 
