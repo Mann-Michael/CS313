@@ -19,10 +19,11 @@
 				
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:swimmerId');
+				$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 				$stmt->execute();
-				$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				$swimmer = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				
-				print_r($swimmers);
+				print_r($swimmer);
 				//Build the swimmer list
 				$swimmerProfile = buildSwimmerProfile($swimmerId);
 				
