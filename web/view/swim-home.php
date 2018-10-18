@@ -14,7 +14,7 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
-				require_once '../library/connections.php';
+				//require_once '../library/connections.php';
 				
 				$stmt = $db->prepare('SELECT * FROM swimmer');
 				$stmt->execute();
@@ -34,7 +34,7 @@
 					$swimmerList = "<p class='notify'>Sorry, no swimmers were returned.</p>";
                 }
 				
-				
+				echo $swimmerList;
 				
 				
 				

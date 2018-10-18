@@ -7,7 +7,7 @@
     //Get the functions library
     require_once '../library/functions.php';
     //Get the connections library (when ready)
-    //require_once '../library/connections.php';
+    require_once '../library/connections.php';
 	//Get the swim model (when ready)
     //require_once '../model/swim-model.php';
 
