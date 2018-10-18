@@ -21,11 +21,11 @@
 				$stmt = $db->prepare('SELECT * FROM swimmer WHERE id=:swimmerId');
 				$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 				$stmt->execute();
-				$swimmer = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				$swimmerInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				
-				print_r($swimmer);
+				print_r($swimmerInfo);
 				//Build the swimmer list
-				$swimmerProfile = buildSwimmerProfile($swimmerId);
+				$swimmerProfile = buildSwimmerProfile($swimmerInfo);
 				
 				//display swimmer list
 				echo $swimmerProfile;

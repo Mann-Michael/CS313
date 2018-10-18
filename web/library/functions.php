@@ -66,24 +66,48 @@ function test_input($data) {
 }
 
 function buildSwimmerList($swimmers){
-		if(count($swimmers) > 0){
-			$sl = '<table>';
-			$sl .= '<thead>';
-			$sl .= '<tr><th>Swimmer</th></tr>';
-			$sl .= '</thead>';
-			$sl .= '<tbody>';
-			foreach ($swimmers as $swimmer) {
-				$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td>';
-			}
-			$sl .= '</tbody></table>';
-		} else {
-			$sl = "<p class='notify'>Sorry, no swimmers were returned.</p>";
+	if(count($swimmers) > 0){
+		$sl = '<table>';
+		$sl .= '<thead>';
+		$sl .= '<tr><th>Swimmer</th><td></td></tr>';
+		$sl .= '</thead>';
+		$sl .= '<tbody>';
+		foreach ($swimmers as $swimmer) {
+			$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td>';
+		}
+		$sl .= '</tbody></table>';
+	} else {
+		$sl = "<p class='notify'>Sorry, no swimmers were returned.</p>";
 	}
 	return $sl;
 }
 
-function buildSwimmerProfile($swimmerId){
-	$sp = "you did it";
+function convertGender($gender){
+	//Convert gender Bool to text
+	if ($gender == 0){
+		$genderName = "Female";
+	} else}{
+		$genderName = "Male";
+	}
+	return $genderName
+}
+
+
+function buildSwimmerProfile($swimmerInfo){
+	//Takes a single swimmer profile and builds a view
+	$genderName = convertGender($swimmerInfo[gender]);
+
+	$sp = '<table>';
+	$sp .= '<thead>';
+	$sp .= '<tr><th>Information</th><td></td></tr>';
+	$sp .= '</thead>';
+	$sp .= '<tbody>';
+	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[name] . '</td>';
+	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[age] . '</td>';
+	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td>';
+	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[team] . '</td>';
+	$sl .= '</tbody></table>';
+	
 	return $sp;
 }
 
