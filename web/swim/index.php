@@ -33,6 +33,7 @@
 		}
 	}
 	dbConnect();
+	
 	//Model Information
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)
 	VALUES
