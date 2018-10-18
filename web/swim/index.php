@@ -42,7 +42,7 @@
 		return $swimmers;
 	}
 	//Get single swimmer profile
-	function getProfile(){
+	/*function getProfile(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -55,7 +55,7 @@
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $top3;
-	}
+	}*/
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
@@ -68,9 +68,7 @@
 		case 'viewSTUFF':
 			break;
 		default:
-		
-			
-			
+
 
 			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
