@@ -12,7 +12,6 @@
     require_once '../model/swim-model.php';
 
 	//Database Connection
-	function dbConnect(){
 		try{
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -31,14 +30,12 @@
 			echo 'Error!: ' . $ex->getMessage();
 			die();
 		}
-	}
 	//Model Information
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)
 	VALUES
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	//Get all swimmers
 	function getSwimmers(){
-		$db = dbConnect();
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
