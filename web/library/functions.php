@@ -73,7 +73,7 @@ function buildSwimmerList($swimmers){
 		$sl .= '</thead>';
 		$sl .= '<tbody>';
 		foreach ($swimmers as $swimmer) {
-			$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td>';
+			$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td></tr>';
 		}
 		$sl .= '</tbody></table>';
 	} else {
@@ -95,17 +95,17 @@ function convertGender($gender){
 
 function buildSwimmerProfile($swimmerInfo){
 	//Takes a single swimmer profile and builds a view
-	$genderName = convertGender($swimmerInfo[gender]);
+	$genderName = convertGender($swimmerInfo[0][gender]);
 
 	$sp = '<table>';
 	$sp .= '<thead>';
 	$sp .= '<tr><th>Information</th><td></td></tr>';
 	$sp .= '</thead>';
 	$sp .= '<tbody>';
-	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[name] . '</td>';
-	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[age] . '</td>';
-	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td>';
-	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[team] . '</td>';
+	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[0][name] . '</td></tr>';
+	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[0][age] . '</td></tr>';
+	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td></tr>';
+	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[0][team] . '</td></tr>';
 	$sp .= '</tbody></table>';
 	
 	return $sp;
