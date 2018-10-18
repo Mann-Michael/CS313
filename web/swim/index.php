@@ -41,7 +41,7 @@
 		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
 		
 	//Get single swimmer profile(make a function later)
-		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id= ;id');
+		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
 		$stmtProfile->execute();
 		$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
 
