@@ -59,8 +59,20 @@ function buildCartConfirmDisplay(){
 }
 
 
-function buildSwimmerList(){
-	$sl;
+function buildSwimmerList($swimmers){
+		if(count($swimmers) > 0){
+		$sl = '<table>';
+		$sl .= '<thead>';
+		$sl .= '<tr><th>Swimmer</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
+		$sl .= '</thead>';
+		$sl .= '<tbody>';
+		foreach ($swimmers as $swimmer) {
+			$sl .= "<tr><td>$swimmer[name]</td>";
+		}
+		$sl .= '</tbody></table>';
+	} else {
+		$sl = "<p class='notify'>Sorry, no swimmers were returned.</p>";
+	}
 	return $sl;
 }
 
