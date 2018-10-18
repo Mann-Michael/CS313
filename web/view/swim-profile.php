@@ -27,14 +27,12 @@
 				//Get events by swimmer ID
 				$stmt = $db->prepare('
 				SELECT 
-				swimmer.name, 
 				stroke.stroketype, 
 				distance.distance, 
 				time, 
 				location, 
 				date
 				FROM event
-				INNER JOIN swimmer ON swimmer.id = event.swimmerid
 				INNER JOIN stroke ON stroke.id = event.strokeid				
 				INNER JOIN distance ON distance.id = event.distanceid
 				WHERE swimmerid = :swimmerId
@@ -49,27 +47,11 @@
 				
 				//display swimmer profile
 				echo $swimmerProfile;
-
-
-				
-				
 				?>
             </div>
 		</main>
     </body>
 </html>
 
-				SELECT 
-				swimmer.name, 
-				stroke.stroketype, 
-				distance.distance, 
-				time, 
-				location, 
-				date
-				FROM event
-				INNER JOIN swimmer ON swimmer.id = event.swimmerid
-				INNER JOIN stroke ON stroke.id = event.strokeid				
-				INNER JOIN distance ON distance.id = event.distanceid
-				WHERE swimmerid = :swimmerId;
 
 

@@ -107,6 +107,16 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td></tr>';
 	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[0][team] . '</td></tr>';
 	$sp .= '</tbody></table>';
+	$sp .= '<table>';
+	$sp .= '<thead>';
+	$sp .= '<tr><th>Events</th></tr>';
+	$sp .= '<tr><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
+	$sp .= '</thead>';
+	$sp .= '<tbody>';	
+	foreach ($eventInfo as $event){
+		$sp .= '<tr><td>' . $event[distance] . '</td><td>' . $event[stroketype] . '</td><td>' . $event[time] . '</td><td>' . $event[location] . '</td><td>' . $event[date] . '</td></tr>';
+	}
+	$sp .= '</tbody></table>';
 	
 	return $sp;
 }
