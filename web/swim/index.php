@@ -36,20 +36,20 @@
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	
 	//Get all swimmers (make a function later)
-		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
-		$stmtSwimmers->execute();
-		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
+		//$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
+		//$stmtSwimmers->execute();
+		//$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
 		
 	//Get single swimmer profile(make a function later)
-		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
-		$stmtProfile->execute();
-		$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
+		//$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
+		//$stmtProfile->execute();
+		//$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
 
 	
 	//Get top 3 swim times per event (make a function later)
-		$stmtTop3 = $db->prepare('SELECT * FROM swimmer');
-		$stmtTop3->execute();
-		$top3 = $stmtTop3->fetchAll(PDO::FETCH_ASSOC);
+		//$stmtTop3 = $db->prepare('SELECT * FROM swimmer');
+		//$stmtTop3->execute();
+		//$top3 = $stmtTop3->fetchAll(PDO::FETCH_ASSOC);
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
