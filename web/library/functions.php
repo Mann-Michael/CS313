@@ -84,7 +84,7 @@ function buildSwimmerList($swimmers){
 
 function convertGender($gender){
 	//Convert gender Bool to text
-	if ($gender = FALSE){
+	if ($gender === FALSE){
 		$genderName = "Female";
 	} else {
 		$genderName = "Male";
