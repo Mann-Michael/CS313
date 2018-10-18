@@ -68,7 +68,7 @@ function buildSwimmerList($swimmers){
 			$sl .= '<tbody>';
 			foreach ($swimmers as $swimmer) {
 				//$sl .= "<tr><td>$swimmer[name]</td>";
-				$sl .= "<a href='index.php?action=viewProfile&id=" . $swimmer[id]. "' >";
+				$sl .= '<tr><td><a href="index.php?action=viewProfile&id=' . $swimmer[id]. '" >' . $swimmer[name] . '</td>';
 			}
 			$sl .= '</tbody></table>';
 		} else {
