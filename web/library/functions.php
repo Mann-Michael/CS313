@@ -60,18 +60,18 @@ function buildCartConfirmDisplay(){
 
 
 function buildSwimmerList(){
-	
+	$sl;
 	return $sl;
 }
 
 function buildSwimmerProfile(){
-	
+	$sp;
 	return $sp;
 }
 
 
 function buildTop3(){
-	
+	$t3;
 	return $t3;
 }
 ?>
