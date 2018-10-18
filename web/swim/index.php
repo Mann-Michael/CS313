@@ -6,10 +6,10 @@
 
     //Get the functions library
     require_once '../library/functions.php';
-    //Get the connections library
-    require_once '../library/connections.php';
-	//Get the swim model
-    require_once '../model/swim-model.php';
+    //Get the connections library (when ready)
+    //require_once '../library/connections.php';
+	//Get the swim model (when ready)
+    //require_once '../model/swim-model.php';
 
 	//Database Connection
 	try{
@@ -20,7 +20,8 @@
 		$dbUser = $dbOpts["user"];
 		$dbPassword = $dbOpts["pass"];
 		$dbName = ltrim($dbOpts["path"],'/');
-
+		
+		global $db;
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
