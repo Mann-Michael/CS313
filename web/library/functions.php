@@ -84,7 +84,7 @@ function buildSwimmerList($swimmers){
 
 function convertGender($gender){
 	//Convert gender Bool to text
-	if ($gender == 0){
+	if ($gender = 0){
 		$genderName = "Female";
 	} else {
 		$genderName = "Male";
@@ -102,10 +102,10 @@ function buildSwimmerProfile($swimmerInfo){
 	$sp .= '<tr><th>Information</th><td></td></tr>';
 	$sp .= '</thead>';
 	$sp .= '<tbody>';
-	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo["name"] . '</td>';
-	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo["age"] . '</td>';
+	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[name] . '</td>';
+	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[age] . '</td>';
 	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td>';
-	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo["team"] . '</td>';
+	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[team] . '</td>';
 	$sp .= '</tbody></table>';
 	
 	return $sp;
