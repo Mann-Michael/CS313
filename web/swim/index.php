@@ -12,43 +12,36 @@
     //require_once '../model/swim-model.php';
 
 	//Database Connection
+	try{
+		$dbUrl = getenv('DATABASE_URL');
+		$dbOpts = parse_url($dbUrl);
+		$dbHost = $dbOpts["host"];
+		$dbPort = $dbOpts["port"];
+		$dbUser = $dbOpts["user"];
+		$dbPassword = $dbOpts["pass"];
+		$dbName = ltrim($dbOpts["path"],'/');
+		
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-	function dbConnect(){
-		try{
-			$dbUrl = getenv('DATABASE_URL');
-			$dbOpts = parse_url($dbUrl);
-			$dbHost = $dbOpts["host"];
-			$dbPort = $dbOpts["port"];
-			$dbUser = $dbOpts["user"];
-			$dbPassword = $dbOpts["pass"];
-			$dbName = ltrim($dbOpts["path"],'/');
-			
-			global $pdo;
-			$pdo = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			return $pdo;
-		}
-		catch (PDOException $ex){
-			echo 'Error!: ' . $ex->getMessage();
-			die();
-		}
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
-	dbConnect();
+	catch (PDOException $ex){
+		echo 'Error!: ' . $ex->getMessage();
+		die();
+	}
 	
 	//Model Information
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)
 	VALUES
-	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
+	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');
 	
 	//Get all swimmers (make a function later)
-	function getSwimmers(){
-		$stmtSwimmers = $GLOBALS['pdo']->prepare('SELECT * FROM swimmer');
+		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
 		$stmtSwimmers->execute();
 		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
-		return $swimmers;
-	}	
+		
 	//Get single swimmer profile(make a function later)
-		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
+		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id= ;id');
 		$stmtProfile->execute();
 		$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
 
@@ -75,7 +68,6 @@
 		case 'viewSwimmerList':
 		default:
 		
-			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
