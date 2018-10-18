@@ -45,7 +45,7 @@
 	/*function getProfile(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
-		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $profile;
 	}
 	
@@ -53,7 +53,7 @@
 	function getTop3(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
-		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$top3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $top3;
 	}*/
 	
@@ -72,7 +72,6 @@
 
 			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
-				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
                 $swimmerList .= '<tr><th>Swimmer</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
