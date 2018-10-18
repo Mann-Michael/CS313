@@ -58,4 +58,20 @@ function buildCartConfirmDisplay(){
     return $cd;
 }
 
+
+function buildSwimmerList(){
+	
+	return $sl;
+}
+
+function buildSwimmerProfile(){
+	
+	return $sp;
+}
+
+
+function buildTop3(){
+	
+	return $t3;
+}
 ?>

@@ -34,28 +34,22 @@
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)
 	VALUES
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
-	//Get all swimmers
-	//function getSwimmers(){
-		$stmt = $db->prepare('SELECT * FROM swimmer');
-		$stmt->execute();
-		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		//return $swimmers;
-	//}
-	//Get single swimmer profile
-	/*function getProfile(){
-		$stmt = $db->prepare('SELECT * FROM swimmer');
-		$stmt->execute();
-		$profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return $profile;
-	}
 	
-	//Get top 3 swim times per event
-	function getTop3(){
-		$stmt = $db->prepare('SELECT * FROM swimmer');
-		$stmt->execute();
-		$top3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return $top3;
-	}*/
+	//Get all swimmers (make a function later)
+		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
+		$stmtSwimmers->execute();
+		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
+		
+	//Get single swimmer profile(make a function later)
+		$stmtProfile = $db->prepare('SELECT * FROM swimmer');
+		$stmtProfile->execute();
+		$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
+
+	
+	//Get top 3 swim times per event (make a function later)
+		$stmtTop3 = $db->prepare('SELECT * FROM swimmer');
+		$stmtTop3->execute();
+		$top3 = $stmtTop3->fetchAll(PDO::FETCH_ASSOC);
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
@@ -65,12 +59,13 @@
     }
 
     switch ($action){
-		case 'viewSTUFF':
+		case 'viewProfile':
+			include '../view/swim-profile.php';
+			break;
+		case 'viewTop3':
+			include '../view/swim-top3.php';
 			break;
 		default:
-
-
-			//$swimmers = getSwimmers();
             if(count($swimmers) > 0){
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
