@@ -32,7 +32,6 @@
 			die();
 		}
 	}
-	dbConnect();
 	
 	//Model Information
 	
