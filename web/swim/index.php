@@ -12,7 +12,6 @@
     require_once '../model/swim-model.php';
 
 	//Database Connection
-	function dbConnect(){
 		try{
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -25,22 +24,21 @@
 			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			return $db;
 		}
 		catch (PDOException $ex){
 			echo 'Error!: ' . $ex->getMessage();
 			die();
 		}
-	}
 	
 	//Model Information
 	
 	//Get all swimmers
-	$db = dbConnect();
-	$stmt = $db->prepare('SELECT * FROM swimmer');
-	$stmt->execute();
-	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
+	function getSwimmers(){
+		$stmt = $db->prepare('SELECT * FROM swimmer');
+		$stmt->execute();
+		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $swimmers;
+	}
 	//Get single swimmer profile
 	/*$stmt = $db->prepare('SELECT * FROM swimmer');
 	$stmt->execute();
@@ -66,16 +64,16 @@
 			
 			
 
-
-            if(count($rows) > 0){
+			$swimmers = getSwimmers();
+            if(count($swimmers) > 0){
 				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
                 $swimmerList .= '<thead>';
                 $swimmerList .= '<tr><th>Swimmer</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
                 $swimmerList .= '</thead>';
                 $swimmerList .= '<tbody>';
-                foreach ($rows as $row) {
-					$swimmerList .= "<tr><td>$row['name']</td>";
+                foreach ($swimmers as $swimmer) {
+					$swimmerList .= "<tr><td>$swimmer['name']</td>";
                 }
 					$swimmerList .= '</tbody></table>';
                 } else {
