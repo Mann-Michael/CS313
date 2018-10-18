@@ -35,12 +35,12 @@
 	VALUES
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	//Get all swimmers
-	//function getSwimmers(){
+	function getSwimmers(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		//return $swimmers;
-	//}
+		return $swimmers;
+	}
 	//Get single swimmer profile
 	/*function getProfile(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
@@ -72,7 +72,7 @@
 			
 			
 
-			//$swimmers = getSwimmers();
+			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
 				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
