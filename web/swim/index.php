@@ -42,8 +42,7 @@
 	
 	//Get all swimmers (make a function later)
 	function getSwimmers(){
-		$db = $GLOBALS['pdo'];
-		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
+		$stmtSwimmers = $GLOBALS['pdo']->prepare('SELECT * FROM swimmer');
 		$stmtSwimmers->execute();
 		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
 		return $swimmers;
