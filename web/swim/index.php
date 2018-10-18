@@ -31,16 +31,18 @@
 	}
 	
 	//Model Information
-	
+	/*INSERT INTO swimmer(name, age, gender,team,email,password)
+	VALUES
+	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	//Get all swimmers
-	function getSwimmers(){
+	//function getSwimmers(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return $swimmers;
-	}
+		//return $swimmers;
+	//}
 	//Get single swimmer profile
-	function getProfile(){
+	/*function getProfile(){
 		$stmt = $db->prepare('SELECT * FROM swimmer');
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -53,7 +55,7 @@
 		$stmt->execute();
 		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $top3;
-	}
+	}*/
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
@@ -70,7 +72,7 @@
 			
 			
 
-			$swimmers = getSwimmers();
+			//$swimmers = getSwimmers();
             if(count($swimmers) > 0){
 				echo "swimmers > 0 ";
                 $swimmerList = '<table>';
