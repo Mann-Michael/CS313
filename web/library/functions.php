@@ -86,7 +86,7 @@ function convertGender($gender){
 	//Convert gender Bool to text
 	if ($gender == 0){
 		$genderName = "Female";
-	} else}{
+	} else {
 		$genderName = "Male";
 	}
 	return $genderName
