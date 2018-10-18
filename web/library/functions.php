@@ -89,7 +89,7 @@ function convertGender($gender){
 	} else {
 		$genderName = "Male";
 	}
-	return $genderName
+	return $genderName;
 }
 
 
