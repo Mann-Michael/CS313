@@ -36,9 +36,9 @@
 	('Avery', 8, FALSE, 'Longhorns', 'avery@avery.com', 'password');*/
 	
 	//Get all swimmers (make a function later)
-		//$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
-		//$stmtSwimmers->execute();
-		//$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
+		$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
+		$stmtSwimmers->execute();
+		$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
 		
 	//Get single swimmer profile(make a function later)
 		//$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
