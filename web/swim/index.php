@@ -7,12 +7,12 @@
     //Get the functions library
     require_once '../library/functions.php';
     //Get the connections library (when ready)
-    //require_once '../library/connections.php';
+    require_once '../library/connections.php';
 	//Get the swim model (when ready)
     //require_once '../model/swim-model.php';
 
 	//Database Connection
-	try{
+	/*try{
 		$dbUrl = getenv('DATABASE_URL');
 		$dbOpts = parse_url($dbUrl);
 		$dbHost = $dbOpts["host"];
@@ -28,7 +28,7 @@
 	catch (PDOException $ex){
 		echo 'Error!: ' . $ex->getMessage();
 		die();
-	}
+	}*/
 	
 	//Model Information
 	/*INSERT INTO swimmer(name, age, gender,team,email,password)

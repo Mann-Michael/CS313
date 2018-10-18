@@ -15,9 +15,9 @@
             <div class="floatpage" id="default" >
 				<?php 
 				
-				$stmtSwimmers = $db->prepare('SELECT * FROM swimmer');
-				$stmtSwimmers->execute();
-				$swimmers = $stmtSwimmers->fetchAll(PDO::FETCH_ASSOC);
+				$stmt = $db->prepare('SELECT * FROM swimmer');
+				$stmt->execute();
+				$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				
 				if(count($swimmers) > 0){
 					$swimmerList = '<table>';
