@@ -14,6 +14,7 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
+				require_once '../library/connections.php';
 				
 				$stmt = $db->prepare('SELECT * FROM swimmer');
 				$stmt->execute();
