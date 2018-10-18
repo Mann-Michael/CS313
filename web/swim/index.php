@@ -12,23 +12,23 @@
     require_once '../model/swim-model.php';
 
 	//Database Connection
-		try{
-			$dbUrl = getenv('DATABASE_URL');
-			$dbOpts = parse_url($dbUrl);
-			$dbHost = $dbOpts["host"];
-			$dbPort = $dbOpts["port"];
-			$dbUser = $dbOpts["user"];
-			$dbPassword = $dbOpts["pass"];
-			$dbName = ltrim($dbOpts["path"],'/');
+	try{
+		$dbUrl = getenv('DATABASE_URL');
+		$dbOpts = parse_url($dbUrl);
+		$dbHost = $dbOpts["host"];
+		$dbPort = $dbOpts["port"];
+		$dbUser = $dbOpts["user"];
+		$dbPassword = $dbOpts["pass"];
+		$dbName = ltrim($dbOpts["path"],'/');
 
-			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (PDOException $ex){
-			echo 'Error!: ' . $ex->getMessage();
-			die();
-		}
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch (PDOException $ex){
+		echo 'Error!: ' . $ex->getMessage();
+		die();
+	}
 	
 	//Model Information
 	
@@ -40,14 +40,20 @@
 		return $swimmers;
 	}
 	//Get single swimmer profile
-	/*$stmt = $db->prepare('SELECT * FROM swimmer');
-	$stmt->execute();
-	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	function getProfile(){
+		$stmt = $db->prepare('SELECT * FROM swimmer');
+		$stmt->execute();
+		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $profile;
+	}
 	
 	//Get top 3 swim times per event
-	$stmt = $db->prepare('SELECT * FROM swimmer');
-	$stmt->execute();
-	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);	*/
+	function getTop3(){
+		$stmt = $db->prepare('SELECT * FROM swimmer');
+		$stmt->execute();
+		$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $top3;
+	}
 	
 	//Get $action, if $action is null then set it to default
     $action = filter_input(INPUT_POST, 'action');
