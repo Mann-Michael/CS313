@@ -106,7 +106,7 @@ function buildSwimmerProfile($swimmerInfo){
 	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[age] . '</td>';
 	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td>';
 	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[team] . '</td>';
-	$sl .= '</tbody></table>';
+	$sp .= '</tbody></table>';
 	
 	return $sp;
 }
