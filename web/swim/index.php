@@ -12,6 +12,7 @@
     //require_once '../model/swim-model.php';
 
 	//Database Connection
+	global $db;
 	try{
 		$dbUrl = getenv('DATABASE_URL');
 		$dbOpts = parse_url($dbUrl);
@@ -21,7 +22,6 @@
 		$dbPassword = $dbOpts["pass"];
 		$dbName = ltrim($dbOpts["path"],'/');
 		
-		global $db;
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
