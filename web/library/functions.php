@@ -99,20 +99,20 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 	$sp = '<table>';
 	$sp .= '<thead>';
-	$sp .= '<tr><th>Information</th><td></td></tr>';
+	$sp .= '<tr><th>Information</th></tr>';
 	$sp .= '</thead>';
 	$sp .= '<tbody>';
 	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[0][name] . '</td></tr>';
 	$sp .= '<tr><td>Age</td><td>' . $swimmerInfo[0][age] . '</td></tr>';
 	$sp .= '<tr><td>Gender</td><td>' . $genderName . '</td></tr>';
 	$sp .= '<tr><td>Team</td><td>' . $swimmerInfo[0][team] . '</td></tr>';
-	$sp .= '</tbody></table>';
+	$sp .= '</tbody></table><br>';
 	$sp .= '<table>';
 	$sp .= '<thead>';
 	$sp .= '<tr><th>Events</th></tr>';
 	$sp .= '<tr><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
 	$sp .= '</thead>';
-	$sp .= '<tbody>';	
+	$sp .= '<tbody>';
 	foreach ($eventInfo as $event){
 		$sp .= '<tr><td>' . $event[distance] . '</td><td>' . $event[stroketype] . '</td><td>' . $event[time] . '</td><td>' . $event[location] . '</td><td>' . $event[date] . '</td></tr>';
 	}

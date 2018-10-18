@@ -26,21 +26,10 @@
 				
 				//Get events by swimmer ID
 				$stmt = $db->prepare('
-				SELECT 
-				stroke.stroketype, 
-				distance.distance, 
-				time, 
-				location, 
-				date
-				FROM event
-				INNER JOIN stroke ON stroke.id = event.strokeid				
-				INNER JOIN distance ON distance.id = event.distanceid
-				WHERE swimmerid = :swimmerId
-				');
+				SELECT stroke.stroketype, distance.distance, time, location, date FROM event INNER JOIN stroke ON stroke.id = event.strokeid INNER JOIN distance ON distance.id = event.distanceid WHERE swimmerid = :swimmerId');
 				$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 				$stmt->execute();
 				$eventInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				print_r($eventInfo);
 				
 				//Build the swimmer profile
 				$swimmerProfile = buildSwimmerProfile($swimmerInfo, $eventInfo);
