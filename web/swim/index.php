@@ -12,6 +12,7 @@
     //require_once '../model/swim-model.php';
 
 	//Database Connection
+	global $pdo;
 	function dbConnect(){
 		try{
 			$dbUrl = getenv('DATABASE_URL');
@@ -22,7 +23,6 @@
 			$dbPassword = $dbOpts["pass"];
 			$dbName = ltrim($dbOpts["path"],'/');
 			
-			global $pdo;
 			$pdo = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			return $pdo;
@@ -46,7 +46,7 @@
 		return $swimmers;
 	}	
 	//Get single swimmer profile(make a function later)
-		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id= ;id');
+		$stmtProfile = $db->prepare('SELECT * FROM swimmer WHERE id=:id');
 		$stmtProfile->execute();
 		$profile = $stmtProfile->fetchAll(PDO::FETCH_ASSOC);
 
@@ -72,6 +72,7 @@
 			break;
 		case 'viewSwimmerList':
 		default:
+		
 			$swimmers = getSwimmers();
             if(count($swimmers) > 0){
                 $swimmerList = '<table>';
