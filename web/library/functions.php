@@ -141,6 +141,8 @@ function buildEventOptions($distances, $strokes){
 
 function buildEventInfo($events){
 	$ei = '<form method="post" action="index.php">';
+	$ei = '<table>';
+	$ei .= '<thead>';
 	$ei .= '<tr><th>Events</th></tr>';
 	$ei .= '<tr><th>Name</th><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
 	$ei .= '</thead>';
