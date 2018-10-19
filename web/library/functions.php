@@ -121,9 +121,8 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 	return $sp;
 }
 
-
 function buildEventOptions($distances, $strokes){
-	$eo = '<form method="get" action="index.php">';
+	$eo = '<form method="post" action="index.php">';
 	$eo .= '<select name="distanceId" id="distanceId">';
 	foreach ($distances as $distance){
 		$eo .= '<option value="' . $distance[id] . '">' . $distance[distance] . '</option>';
@@ -133,10 +132,23 @@ function buildEventOptions($distances, $strokes){
 	foreach ($strokes as $stroke){
 		$eo .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
 	}	
-	$eo .= '</select>';
-	$eo .= '<input type="submit" name="btnReview" value="See Events">';
+	$eo .= '</select><br>';
+	$eo .= '<input type="submit" name="btnReview">See Events</input>';
     $eo .= '<input type="hidden" name="action" value="viewEvents">';
 	$eo .= '</form>';
 	return $eo;
+}
+
+function buildEventInfo($events){
+	$ei = '<form method="post" action="index.php">';
+	$ei .= '<tr><th>Events</th></tr>';
+	$ei .= '<tr><th>Name</th><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
+	$ei .= '</thead>';
+	$ei .= '<tbody>';
+	foreach ($events as $event){
+		$ei .= '<tr><td>' . $event[name] . '</td><td>' . $event[distance] . '</td><td>' . $event[stroketype] . '</td><td>' . $event[time] . '</td><td>' . $event[location] . '</td><td>' . $event[date] . '</td></tr>';
+	}
+	$ei .= '</tbody></table>';
+	return $ei;
 }
 ?>
