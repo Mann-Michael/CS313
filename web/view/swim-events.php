@@ -37,5 +37,3 @@
 		</main>
     </body>
 </html>
-
-SELECT * FROM events WHERE strokeid AND distanceid;
