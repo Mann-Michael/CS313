@@ -14,8 +14,8 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
-				$strokeId = test_input($_POST['strokeId']);
-				$distanceId = test_input($_POST['distanceId']);
+				$strokeId = test_input($_GET['strokeId']);
+				$distanceId = test_input($_GET['distanceId']);
 				
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//Get swimmer info by event id
