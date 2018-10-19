@@ -39,7 +39,7 @@
 				<?php 
 					foreach ($distances as $distance){?>
 						<option value="<?= $distance['distanceId'] ?>"><?= $distance['distance'] ?></option>
-				<?php
+					<?php}
 				
 				//Build the event options list
 				//$eventOptions = buildEventOptions($strokes, $distances);
