@@ -122,8 +122,8 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 }
 
 
-function buildTop3(){
-	$t3;
-	return $t3;
+function buildEvents(){
+	$se;
+	return $se;
 }
 ?>

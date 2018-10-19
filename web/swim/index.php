@@ -22,8 +22,8 @@
 		case 'viewProfile':
 			include '../view/swim-profile.php';
 			break;
-		case 'viewTop3':
-			include '../view/swim-top3.php';
+		case 'viewEvents':
+			include '../view/swim-events.php';
 			break;
 		case 'viewSwimmerList':
 		default:
