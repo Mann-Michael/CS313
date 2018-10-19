@@ -123,14 +123,14 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 
 function buildEventOptions($distances, $strokes){
-	$eo = '<select name="distance" id="distanceID"><option selected="selected">Select Distance</option>';
+	$eo = '<select name="distance" id="distanceId"><option selected="selected">Select Distance</option>';
 	foreach ($distances as $distance){
 		$eo .= '<option value="' . $distance[distanceId] . '">' . $distance[distance] . '</option>';
 	}
 	$eo .= '</select>';
-	$eo .= '<select name="stroke" id="strokeID"><option selected="selected">Select Stroke</option>';
+	$eo .= '<select name="stroke" id="strokeId"><option selected="selected">Select Stroke</option>';
 	foreach ($strokes as $stroke){
-		$eo .= '<option value="' . $stroke[strokeId] . '">' . $stroke[stroke] . '</option>';
+		$eo .= '<option value="' . $stroke[strokeId] . '">' . $stroke[stroketype] . '</option>';
 	}	
 	$eo .= '</select>';
 	return $eo;
