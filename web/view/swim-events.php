@@ -19,7 +19,23 @@
 				
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//Get swimmer info by event id
-				$stmt = $db->prepare('SELECT * FROM event WHERE strokeid=:strokeId AND distanceid=:distanceId');
+				$stmt = $db->prepare('SELECT
+swimmer.name,
+distance.distance, 
+stroke.stroketype, 
+time, 
+location, 
+date 
+FROM event 
+INNER JOIN stroke ON stroke.id = event.strokeid 
+INNER JOIN distance ON distance.id = event.distanceid 
+INNER JOIN swimmer ON swimmer.id = event.swimmerid
+WHERE strokeid=:strokeId 
+AND distanceid=:distanceId');
+				
+				
+				
+				
 				$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
 				$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
 				$stmt->execute();
