@@ -123,7 +123,7 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 
 function buildEventOptions($distances, $strokes){
-	$eo = '<form method="post" action="swim-events.php">';
+	$eo = '<form method="post" action="index.php">';
 	$eo .= '<select name="distance" id="distanceId">';
 	foreach ($distances as $distance){
 		$eo .= '<option value="' . $distance[distanceid] . '">' . $distance[distance] . '</option>';
