@@ -33,25 +33,12 @@
 				
 				//display swimmer list
 				echo $swimmerList;
-				?>
-				<select name="distance" id="distanceID">
-					<option selected="selected">Select Distance</option>
-				<?php 
-					foreach ($distances as $distance){?>
-						<option value="<?= $distance['distanceId'] ?>"><?= $distance['distance'] ?></option>
-					<?php}?>
-				<select name="stroke" id="strokeID">
-					<option selected="selected">Select Stroke</option>
-				<?php 
-					foreach ($strokes as $stroke){?>
-						<option value="<?= $stroke['strokeId'] ?>"><?= $stroke['stroketype'] ?></option>
-					<?php}
 					
 				//Build the event options list
-				//$eventOptions = buildEventOptions($strokes, $distances);
+				$eventOptions = buildEventOptions($distances, $strokes);
 				
 				//display event options list
-				//echo $eventOptions;
+				echo $eventOptions;
 				
 				?>
             </div>
