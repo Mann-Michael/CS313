@@ -19,8 +19,9 @@
 				
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//Get swimmer info by event id
-				$stmt = $db->prepare('SELECT * FROM events WHERE strokeId=:strokeId AND strokeId=:distanceId');
-				$stmt->bindValue(':eventId', $eventId, PDO::PARAM_INT);
+				$stmt = $db->prepare('SELECT * FROM event WHERE strokeid=:strokeId AND distanceid=:distanceId');
+				$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
+				$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
 				$stmt->execute();
 				$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				print_r($events);
@@ -36,3 +37,5 @@
 		</main>
     </body>
 </html>
+
+SELECT * FROM events WHERE strokeid AND distanceid;
