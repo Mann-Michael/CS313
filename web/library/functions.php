@@ -124,17 +124,17 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 function buildEventOptions($distances, $strokes){
 	$eo = '<form method="get" action="index.php">';
-	$eo .= '<select name="distance" id="distanceId">';
+	$eo .= '<select name="distanceId" id="distanceId">';
 	foreach ($distances as $distance){
-		$eo .= '<option value="' . $distance[distanceid] . '">' . $distance[distance] . '</option>';
+		$eo .= '<option value="' . $distance[id] . '">' . $distance[distance] . '</option>';
 	}
 	$eo .= '</select>';
-	$eo .= '<select name="stroke" id="strokeId">';
+	$eo .= '<select name="strokeId" id="strokeId">';
 	foreach ($strokes as $stroke){
-		$eo .= '<option value="' . $stroke[strokeid] . '">' . $stroke[stroketype] . '</option>';
+		$eo .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
 	}	
 	$eo .= '</select>';
-	$eo .= '<input type="submit" name="btnReview" value="Update Review">';
+	$eo .= '<input type="submit" name="btnReview" value="See Events">';
     $eo .= '<input type="hidden" name="action" value="viewEvents">';
 	$eo .= '</form>';
 	return $eo;
