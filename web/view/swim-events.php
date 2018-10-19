@@ -24,7 +24,6 @@
 				$stmt->execute();
 				$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				print_r($events);
-				break;
 				
 				//Build the swimmer profile
 				$eventInfo = buildEventInfo($events);
