@@ -123,16 +123,20 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 
 function buildEventOptions($distances, $strokes){
-	$eo = '<select name="distance" id="distanceId"><option selected="selected">Select Distance</option>';
+	$eo = '<form method="post" action="swim-events.php">';
+	$eo .= '<select name="distance" id="distanceId">';
 	foreach ($distances as $distance){
-		$eo .= '<option value="' . $distance[distanceId] . '">' . $distance[distance] . '</option>';
+		$eo .= '<option value="' . $distance[distanceid] . '">' . $distance[distance] . '</option>';
 	}
 	$eo .= '</select>';
-	$eo .= '<select name="stroke" id="strokeId"><option selected="selected">Select Stroke</option>';
+	$eo .= '<select name="stroke" id="strokeId">';
 	foreach ($strokes as $stroke){
-		$eo .= '<option value="' . $stroke[strokeId] . '">' . $stroke[stroketype] . '</option>';
+		$eo .= '<option value="' . $stroke[strokeid] . '">' . $stroke[stroketype] . '</option>';
 	}	
 	$eo .= '</select>';
+	$eo .= '<input type="submit" name="btnReview" value="Update Review">';
+    $eo .= '<input type="hidden" name="action" value="viewEvents">';
+	$eo .= '</form>';
 	return $eo;
 }
 ?>
