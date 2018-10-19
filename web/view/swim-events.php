@@ -40,7 +40,6 @@ AND distanceid=:distanceId');
 				$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
 				$stmt->execute();
 				$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				print_r($events);
 				
 				//Build the swimmer profile
 				$eventInfo = buildEventInfo($events);
