@@ -82,3 +82,6 @@ VALUES (5,3,3,32,'Cold Pool','2015-03-29');
 
 INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 VALUES (5,4,4,98,'Old Pool','2016-04-30');
+
+
+ALTER TABLE swimmer ADD CONSTRAINT UNI_EMAIL_1 UNIQUE (email);

@@ -35,9 +35,7 @@
 			include '../view/swim-manageswimmer.php';
 			break;			
 		case 'viewLogin':
-			/*
-			this page presents a form that allows the user to enter user name and password, then sends it to procLogin
-			*/
+			//This page presents a form that allows the user to enter user name and password, then sends it to procLogin
 			include '../view/swim-login.php';
 			break;
 		case 'viewNewSwimmer':
@@ -47,13 +45,14 @@
 			include '../view/swim-newswimmer.php';
 			break;
 		case 'procLogin':
-			/*
-			this function checks the users login credentials
-			if they are good, they are taken to viewManageUser
-			if they are bad, they are taken to viewLogin
-			*/
-			include '../view/swim-login.php';
-			include '../view/swim-manageswimmer.php';
+			//Search for swimmer with this email and fill out session array
+			//compare password to the password for the email
+			//if the check is true, then include swim-profile with swimmerId
+			//if the check is false, then include the login screen and say it failed
+			$_SESSION['loggedin'] = TRUE;
+			$temp_swimmerId = 1;
+			//use the session array to get the swimmer id
+			header("../index.php?swimmerId=" . $temp_swimmerId);
 			break;			
 		case 'procNewSwimmer':
 			/*

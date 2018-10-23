@@ -30,12 +30,16 @@
 				$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 				$stmt->execute();
 				$eventInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+				//If user is logged in and this is their profile, then build add event and edit profile
+				//create a function that builds edit profile button and add event button inside a div
 				
 				//Build the swimmer profile
 				$swimmerProfile = buildSwimmerProfile($swimmerInfo, $eventInfo);
 				
 				//display swimmer profile
 				echo $swimmerProfile;
+				
 				?>
             </div>
 		</main>

@@ -13,12 +13,13 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<p>
-					<a href="index.php?action=viewLogin">Login</a> 
-					<span>||</span> 
-					<a href="index.php?action=viewNewSwimmer">New Swimmer?</a>
-				</p>
 				<?php 
+				//If the user is logged in, then put their name here, and do not display the rest 
+				if ($_SESSION['loggedin']== TRUE){
+					echo 'You are logged in!';
+				} else {
+					echo '<p><a href="index.php?action=viewLogin">Login</a><span>||</span><a href="index.php?action=viewNewSwimmer">New Swimmer?</a></p>';
+				}
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//get all swimmers
 				$stmt = $db->prepare('SELECT * FROM swimmer');
