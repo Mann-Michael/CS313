@@ -14,8 +14,11 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
-				
-				$swimmerId = test_input($_GET['id']);
+				if (isset($_GET['id'])){
+					$swimmerId = test_input($_GET['id']);
+				} else {
+					$swimmerId = test_input($_POST['id']);
+				}
 				
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//Get swimmer info by swimmer id
