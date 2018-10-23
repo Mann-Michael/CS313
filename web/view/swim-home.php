@@ -16,7 +16,7 @@
 				<?php 
 				//If the user is logged in, then put their name here, and do not display the rest 
 				if ($_SESSION['loggedin']== TRUE){
-					echo 'You are logged in!';
+					echo '<a href="index.php?action=procLogoff">Login</a>!';
 				} else {
 					echo '<p><a href="index.php?action=viewLogin">Login</a><span>||</span><a href="index.php?action=viewNewSwimmer">New Swimmer?</a></p>';
 				}

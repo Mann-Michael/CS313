@@ -44,6 +44,11 @@
 			*/
 			include '../view/swim-newswimmer.php';
 			break;
+		case 'procLogout':
+			//Destroy the session and send them back to home page
+			session_destroy()
+			include '../view/swim-home.php';
+			break;	
 		case 'procLogin':
 			//Search for swimmer with this email and fill out session array
 			//compare password to the password for the email
