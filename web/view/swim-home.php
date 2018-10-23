@@ -13,9 +13,11 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<a href="index.php?action=viewLogin">Login</a> 
-				<span>||</span>
-				<a href="index.php?action=viewNewUser">New Swimmer?</a>
+				<p>
+					<a href="index.php?action=viewLogin">Login</a> 
+					<span>||</span> 
+					<a href="index.php?action=viewNewSwimmer">New Swimmer?</a>
+				</p>
 				<?php 
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//get all swimmers
