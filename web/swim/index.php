@@ -57,7 +57,7 @@
 			$_SESSION['loggedin'] = TRUE;
 			$temp_swimmerId = 1;
 			//use the session array to get the swimmer id
-			header("../index.php?id=".urlencode($temp_swimmerId));
+			header("location: ../index.php?id=".urlencode($temp_swimmerId));
 			break;			
 		case 'procNewSwimmer':
 			/*
