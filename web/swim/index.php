@@ -47,7 +47,7 @@
 		case 'procLogout':
 			//Destroy the session and send them back to home page
 			session_destroy();
-			header("location: ../index.php);
+			header("location: ../index.php");
 			break;	
 		case 'procLogin':
 			//Search for swimmer with this email and fill out session array
