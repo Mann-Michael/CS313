@@ -1,0 +1,84 @@
+('SELECT
+swimmer.name,
+distance.distance, 
+stroke.stroketype, 
+time, 
+location, 
+date 
+FROM event 
+INNER JOIN stroke ON stroke.id = event.strokeid 
+INNER JOIN distance ON distance.id = event.distanceid 
+INNER JOIN swimmer ON swimmer.id = event.swimmerid
+WHERE strokeid=:strokeId 
+AND distanceid=:distanceId');
+
+SELECT
+swimmer.name,
+distance.distance, 
+stroke.stroketype, 
+time, 
+location, 
+date 
+FROM event 
+INNER JOIN stroke ON stroke.id = event.strokeid 
+INNER JOIN distance ON distance.id = event.distanceid 
+INNER JOIN swimmer ON swimmer.id = event.swimmerid
+WHERE strokeid=1
+AND distanceid=1;
+
+
+
+
+
+SELECT * 
+FROM event 
+WHERE strokeid=:strokeId 
+AND distanceid=:distanceId
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (2,1,4,23,'Old Pool','2010-01-19');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (2,2,3,54,'Big Pool','2011-02-16');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (2,3,2,22.3,'Little Pool','2012-03-17');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (2,4,1,54,'Wells Branch','2013-04-18');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (3,1,1,76453,'Stinky Pool','2014-05-19');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (3,2,2,12,'Texas Pool','2015-06-20');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (3,3,3,52,'Old Texas Pool','2016-07-21');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (3,4,4,87,'Little Pool','2017-08-22');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (4,1,4,16,'Awesome Pool','2018-09-23');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (4,2,3,987,'Old Pool','2010-10-24');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (4,3,2,87,'Stinky Pool','2011-11-25');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (4,4,1,6543,'Big Pool','2012-12-26');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (5,1,1,43,'Longhorns','2013-01-27');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (5,2,2,12,'Big Pool','2014-02-28');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (5,3,3,32,'Cold Pool','2015-03-29');
+
+INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+VALUES (5,4,4,98,'Old Pool','2016-04-30');

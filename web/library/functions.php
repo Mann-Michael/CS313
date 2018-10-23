@@ -133,7 +133,7 @@ function buildEventOptions($distances, $strokes){
 		$eo .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
 	}	
 	$eo .= '</select><br>';
-	$eo .= '<input type="submit" name="btnReview">See Events</input>';
+	$eo .= '<input type="submit" name="btnReview"></input>';
     $eo .= '<input type="hidden" name="action" value="viewEvents">';
 	$eo .= '</form>';
 	return $eo;
