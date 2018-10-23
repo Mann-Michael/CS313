@@ -3,6 +3,27 @@
     <head>
         <title>Michael Mann .tech</title>
 		<?php include ("../common/head.php"); ?>
+		<?php
+			//SQL statements, these would usually be in a model, but I can't get that to work
+			//get all swimmers
+			$stmt = $db->prepare('SELECT * FROM swimmer');
+			$stmt->execute();
+			$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			//get all distances
+			$stmt = $db->prepare('SELECT * FROM distance');
+			$stmt->execute();
+			$distances = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			//get all strokes
+			$stmt = $db->prepare('SELECT * FROM stroke');
+			$stmt->execute();
+			$strokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			//Build the swimmer list
+			$swimmerList = buildSwimmerList($swimmers);
+			
+			//Build the event options list
+			$eventOptions = buildEventOptions($distances, $strokes);
+		?>
     </head>
     <body>
         <header>
@@ -14,33 +35,13 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
-				//If the user is logged in, then put their name here, and do not display the rest 
-				if ($_SESSION['loggedin']== TRUE){
-					echo '<a href="index.php?action=procLogout">Logout</a>!';
-				} else {
-					echo '<p><a href="index.php?action=viewLogin">Login</a><span>||</span><a href="index.php?action=viewNewSwimmer">New Swimmer?</a></p>';
-				}
-				//SQL statements, these would usually be in a model, but I can't get that to work
-				//get all swimmers
-				$stmt = $db->prepare('SELECT * FROM swimmer');
-				$stmt->execute();
-				$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				//get all distances
-				$stmt = $db->prepare('SELECT * FROM distance');
-				$stmt->execute();
-				$distances = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				//get all strokes
-				$stmt = $db->prepare('SELECT * FROM stroke');
-				$stmt->execute();
-				$strokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-				//Build the swimmer list
-				$swimmerList = buildSwimmerList($swimmers);
-				
-				//Build the event options list
-				$eventOptions = buildEventOptions($distances, $strokes);				
+					//If the user is logged in, then put their name here, and do not display the rest 
+					if ($_SESSION['loggedin']== TRUE){
+						echo '<p><a href="index.php?action=procLogout">Logout!</a></p>';
+					} else {
+						echo '<p><a href="index.php?action=viewLogin">Login</a><span>||</span><a href="index.php?action=viewNewSwimmer">New Swimmer?</a></p>';
+					}				
 				?>
-				
 				<div>
 					<h2>Search by Swimmers</h2>
 					<?php				

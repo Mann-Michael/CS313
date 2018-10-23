@@ -26,14 +26,7 @@
 						<input type="submit" name="btnLogin"></input>
 						<input type="hidden" name="action" value="procLogin">
 					</div>
-				</form>
-			
-				<?php
-				
-				?>
-				
-				</div>				
-				
+				</form>				
             </div>
 		</main>
     </body>
