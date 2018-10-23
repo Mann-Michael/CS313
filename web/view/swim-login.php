@@ -9,13 +9,20 @@
         </header>
         <nav>
 			<?php include ("../common/nav.php"); ?>
-			<h1 id="title">Swim Tracker</h1>
+			<h1 id="title">User Login</h1>
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<a href="index.php?action=viewLogin">Login</a>
-				<a href="index.php?action=viewNewUser">Login</a>
-				<?php 
+				<form method="post" action="index.php">
+					User Name:
+					<input type="text" name=userUserName">
+					Password:
+					<input type="text" name=userUserName">
+					<input type="submit" name="btnLogin"></input>
+					<input type="hidden" name="action" value="procLogin">
+				</form>
+			
+				<?php
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//get all swimmers
 				$stmt = $db->prepare('SELECT * FROM swimmer');
@@ -37,19 +44,6 @@
 				$eventOptions = buildEventOptions($distances, $strokes);				
 				?>
 				
-				<div>
-					<h2>Search by Swimmers</h2>
-					<?php				
-						//display swimmer list
-						echo $swimmerList;
-					?>
-				</div>
-				<div>
-					<h2>Search by Event</h2>
-					<?php
-						//display event options list
-						echo $eventOptions;
-					?>
 				</div>				
 				
             </div>

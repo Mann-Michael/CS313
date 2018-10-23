@@ -13,9 +13,7 @@
         </nav>
         <main>            
             <div class="floatpage" id="default" >
-				<a href="index.php?action=viewLogin">Login</a>
-				<a href="index.php?action=viewNewUser">Login</a>
-				<?php 
+				<?php
 				//SQL statements, these would usually be in a model, but I can't get that to work
 				//get all swimmers
 				$stmt = $db->prepare('SELECT * FROM swimmer');
