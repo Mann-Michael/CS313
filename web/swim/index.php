@@ -22,17 +22,17 @@
 		case 'viewProfile':
 			include '../view/swim-profile.php';
 			break;
-		case 'viewManageUser':
+		case 'viewManageSwimmer':
 			/*
 			this page presents a form allows the user to add events to themselves, or adjust their user information
 			*/
-			include '../view/swim-manageuser.php';
+			include '../view/swim-manageswimmer.php';
 			break;
 		case 'procAddEvent':
 			/*
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
-			include '../view/swim-manageuser.php';
+			include '../view/swim-manageswimmer.php';
 			break;			
 		case 'viewLogin':
 			/*
@@ -40,11 +40,11 @@
 			*/
 			include '../view/swim-login.php';
 			break;
-		case 'viewNewUser':
+		case 'viewNewSwimmer':
 			/*
 			this page presents a form that allows the user to enter user information and send it to proc new user
 			*/
-			include '../view/swim-newuser.php';
+			include '../view/swim-newswimmer.php';
 			break;
 		case 'procLogin':
 			/*
@@ -53,16 +53,16 @@
 			if they are bad, they are taken to viewLogin
 			*/
 			include '../view/swim-login.php';
-			include '../view/swim-manageuser.php';
+			include '../view/swim-manageswimmer.php';
 			break;			
-		case 'procNewUser':
+		case 'procNewSwimmer':
 			/*
 			this function creates a new user as long as it doesnt exist yet
 			if it exists it sends the user back to viewLogin
 			if it doesnt exist, it sends them to viewManageUser
 			*/
 			include '../view/swim-login.php';
-			include '../view/swim-manageuser.php';
+			include '../view/swim-manageswimmer.php';
 			break;			
 		case 'viewEvents':
 			include '../view/swim-events.php';

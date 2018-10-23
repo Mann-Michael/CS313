@@ -14,10 +14,14 @@
         <main>            
             <div class="floatpage" id="default" >
 				<form method="post" action="index.php">
-					User Name:
-					<input type="text" name=userUserName">
-					Password:
-					<input type="text" name=userUserName">
+					<div class="field-wrapper">
+						<label>Email</label>
+						<input type="text" name=swimmerEmail">
+					</div>
+					<div class="field-wrapper">
+						<label>Password</label>
+						<input type="text" name=swimmerPassword">
+					</div>
 					<input type="submit" name="btnLogin"></input>
 					<input type="hidden" name="action" value="procLogin">
 				</form>
