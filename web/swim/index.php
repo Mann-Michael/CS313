@@ -22,17 +22,29 @@
 		case 'viewProfile':
 			include '../view/swim-profile.php';
 			break;
-		case 'viewManageSwimmer':
+		case 'viewAddEvent':
 			/*
 			this page presents a form allows the user to add events to themselves, or adjust their user information
 			*/
-			include '../view/swim-manageswimmer.php';
+			include '../view/swim-addevent.php';
+			break;
+		case 'viewEditSwimmer':
+			/*
+			this page presents a form allows the user to add events to themselves, or adjust their user information
+			*/
+			include '../view/swim-editswimmer.php';
 			break;
 		case 'procAddEvent':
 			/*
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
-			include '../view/swim-manageswimmer.php';
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
+			break;
+		case 'ProcEditSwimmer':
+			/*
+			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
+			*/
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
 		case 'viewLogin':
 			//This page presents a form that allows the user to enter user name and password, then sends it to procLogin
@@ -55,9 +67,9 @@
 			//if the check is true, then include swim-profile with swimmerId
 			//if the check is false, then include the login screen and say it failed
 			$_SESSION['loggedin'] = TRUE;
-			$temp_swimmerId = 1;
+			$_SESSION['id'] = 1;
 			//use the session array to get the swimmer id
-			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($temp_swimmerId));
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
 		case 'procNewSwimmer':
 			/*

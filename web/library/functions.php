@@ -92,7 +92,6 @@ function convertGender($gender){
 	return $genderName;
 }
 
-
 function buildSwimmerProfile($swimmerInfo, $eventInfo){
 	//Takes a single swimmer profile and builds a view
 	$genderName = convertGender($swimmerInfo[0][gender]);
