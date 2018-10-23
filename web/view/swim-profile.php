@@ -20,12 +20,6 @@
 			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 			$stmt->execute();
 			$eventInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-			//If user is logged in and this is their profile, then build add event and edit profile
-			if(($_SESSION['loggedin'] == TRUE) && ($_SESSION['id'] = $swimmerId)) {
-				//build the buttons!
-				echo '<p><a href="index.php?action=viewEditSwimmer">Edit Swimmer</a><span>||</span><a href="index.php?action=viewAddEvent">Add Event</a></p>';
-			}
 			
 			//Build the swimmer profile
 			$swimmerProfile = buildSwimmerProfile($swimmerInfo, $eventInfo);
@@ -41,6 +35,11 @@
         <main>            
             <div class="floatpage" id="default" >
 				<?php 
+					//If user is logged in and this is their profile, then build add event and edit profile
+					if(($_SESSION['loggedin'] == TRUE) && ($_SESSION['id'] = $swimmerId)) {
+						echo '<p><a href="index.php?action=viewEditSwimmer">Edit Swimmer</a><span>||</span><a href="index.php?action=viewAddEvent">Add Event</a></p>';
+					}
+					
 					//display swimmer profile
 					echo $swimmerProfile;
 				?>
