@@ -22,8 +22,10 @@
 						<label>Password</label>
 						<input type="text" name=swimmerPassword">
 					</div>
-					<input type="submit" name="btnLogin"></input>
-					<input type="hidden" name="action" value="procLogin">
+					<div class="field-wrapper">
+						<input type="submit" name="btnLogin"></input>
+						<input type="hidden" name="action" value="procLogin">
+					</div>
 				</form>
 			
 				<?php

@@ -38,8 +38,10 @@
 						<label>Password</label>
 						<input type="text" name=swimmerPassword">
 					</div>
-					<input type="submit" name="btnNewSwimmer"></input>
-					<input type="hidden" name="action" value="procNewSwimmer">
+					<div class="field-wrapper">
+						<input type="submit" name="btnNewSwimmer"></input>
+						<input type="hidden" name="action" value="procNewSwimmer">
+					</div>
 				</form>
 			
 				<?php
