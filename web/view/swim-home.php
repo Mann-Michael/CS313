@@ -28,20 +28,28 @@
 				$stmt->execute();
 				$strokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
 				//Build the swimmer list
 				$swimmerList = buildSwimmerList($swimmers);
 				
-				//display swimmer list
-				echo $swimmerList;
-					
 				//Build the event options list
-				$eventOptions = buildEventOptions($distances, $strokes);
-				
-				//display event options list
-				echo $eventOptions;
-				
+				$eventOptions = buildEventOptions($distances, $strokes);				
 				?>
+				
+				<div>
+					<h2>Search by Swimmers</h2>
+					<?php				
+						//display swimmer list
+						echo $swimmerList;
+					?>
+				</div>
+				<div>
+					<h2>Search by Event</h2>
+					<?php
+						//display event options list
+						echo $eventOptions;
+					?>
+				</div>				
+				
             </div>
 		</main>
     </body>
