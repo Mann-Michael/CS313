@@ -47,7 +47,7 @@
 		case 'procLogout':
 			//Destroy the session and send them back to home page
 			session_destroy();
-			header("location: ../index.php");
+			header("location: ../swim/index.php");
 			break;	
 		case 'procLogin':
 			//Search for swimmer with this email and fill out session array
@@ -57,7 +57,7 @@
 			$_SESSION['loggedin'] = TRUE;
 			$temp_swimmerId = 1;
 			//use the session array to get the swimmer id
-			header("location: ../index.php?action=viewProfile&id=".urlencode($temp_swimmerId));
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($temp_swimmerId));
 			break;			
 		case 'procNewSwimmer':
 			/*
