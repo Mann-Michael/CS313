@@ -46,7 +46,7 @@
 			break;
 		case 'procLogout':
 			//Destroy the session and send them back to home page
-			session_destroy()
+			session_destroy();
 			include '../view/swim-home.php';
 			break;	
 		case 'procLogin':
