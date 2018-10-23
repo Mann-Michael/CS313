@@ -52,7 +52,7 @@
 			$_SESSION['loggedin'] = TRUE;
 			$temp_swimmerId = 1;
 			//use the session array to get the swimmer id
-			header("../index.php?swimmerId=" . $temp_swimmerId);
+			header("../index.php?swimmerId=1");
 			break;			
 		case 'procNewSwimmer':
 			/*
