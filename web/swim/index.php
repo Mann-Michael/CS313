@@ -42,8 +42,8 @@
 			$swimmerId = $_SESSION['id'];
 			$strokeId = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
 			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
-			$eventTime = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
-			$eventLocation = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_STRING);
+			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
+			$eventLocation = filter_input(INPUT_POST, 'eventLocation', FILTER_SANITIZE_STRING);
 
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ','. $eventLocation . ',CURRENT_DATE)');
