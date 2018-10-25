@@ -46,11 +46,11 @@
 					</div>
 					<div class="field-wrapper">
 						<label>Time</label>
-						<input type="text" name=eventTime">
+						<input type="text" name="eventTime">
 					</div>
 					<div class="field-wrapper">
 						<label>Location</label>
-						<input type="text" name=eventLocation">
+						<input type="text" name="eventLocation">
 					<div class="field-wrapper">
 						<input type="submit" name="btnAddEvent"></input>
 						<input type="hidden" name="action" value="procAddEvent">
