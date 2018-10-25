@@ -59,7 +59,7 @@
 			//VALUES (4,1,3,4678321,'THE Pool', CURRENT_DATE);
 			
 			
-			//header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
 		case 'ProcEditSwimmer':
 			/*
