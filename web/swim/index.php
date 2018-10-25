@@ -53,12 +53,8 @@
 */		
 
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
-			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ','. $eventLocation . ',CURRENT_DATE)');
+			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ',"'. $eventLocation . '",CURRENT_DATE)');
 			$stmt->execute();
-			//INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
-			//VALUES (4,1,3,4678321,'THE Pool', CURRENT_DATE);
-			
-			
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
 		case 'ProcEditSwimmer':
