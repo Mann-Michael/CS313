@@ -24,8 +24,8 @@
 					</div>
 					<div class="field-wrapper">
 						<label>Gender</label>
-						<input type="radio" name=swimmerGender" value="0">Female</input>
-						<input type="radio" name=swimmerGender" value="1">Male</input>
+						<input type="radio" name=swimmerGender" value="FALSE">Female</input>
+						<input type="radio" name=swimmerGender" value="TRUE">Male</input>
 					</div>
 					<div class="field-wrapper">
 						<label>Team</label>

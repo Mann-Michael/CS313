@@ -92,7 +92,7 @@
 			//Get variables from hidden post
 			$swimmerName = filter_input(INPUT_POST, 'swimmerName', FILTER_SANITIZE_STRING);
 			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
-			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
+			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_STRING);
 			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			$swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
@@ -101,7 +101,7 @@
 			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
-			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerPassword', $swimmerPassword, PDO::PARAM_STR);
@@ -117,3 +117,6 @@
 		    include '../view/swim-home.php';
     }
 ?>
+
+
+
