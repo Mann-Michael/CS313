@@ -44,6 +44,7 @@
 			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
 			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
 			$eventLocation = filter_input(INPUT_POST, 'eventLocation', FILTER_SANITIZE_STRING);
+
 			
 /*			echo $swimmerId;
 			echo $strokeId;
@@ -53,8 +54,14 @@
 */		
 
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
-			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ',"'. $eventLocation . '",CURRENT_DATE)');
+			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
+			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
+			$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
+			$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
+			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
+			$stmt->bindValue(':eventLocation', $eventLocation, PDO::PARAM_STR);
 			$stmt->execute();
+			
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
 		case 'ProcEditSwimmer':
