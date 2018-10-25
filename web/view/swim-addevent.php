@@ -22,7 +22,7 @@
 			$swimmerList = buildSwimmerList($swimmers);
 			
 			//Build the event options list
-			$eventOptions = buildEventOptions($distances, $strokes);				
+			$eventOptions = buildEventOptions($distances, $strokes);
 		?>
     </head>
     <body>
@@ -36,32 +36,32 @@
             <div class="floatpage" id="default" >
 				<form method="post" action="index.php">
 					<div class="field-wrapper">
-						<label>Swimmer Name</label>
-						<input type="text" name=swimmerName">
+						<label>Distance/ Stroke</label>
+						<?php
+							buildDistanceOptions($distance);
+						?>
 					</div>
 					<div class="field-wrapper">
-						<label>Age</label>
-						<input type="text" name=swimmerAge">
+						<label>Stroke</label>
+						<?php 
+							buildStrokeOptions($strokes);
+						?>
 					</div>
 					<div class="field-wrapper">
-						<label>Gender</label>
-						<input type="text" name=swimmerGender">
+						<label>Time</label>
+						<input type="text" name=eventTime">
 					</div>
 					<div class="field-wrapper">
-						<label>Team</label>
-						<input type="text" name=swimmerTeam">
+						<label>Location</label>
+						<input type="text" name=eventLocation">
 					</div>
 					<div class="field-wrapper">
-						<label>Email</label>
-						<input type="text" name=swimmerEmail">
+						<label>Date</label>
+						<input type="text" name=eventDate">
 					</div>
 					<div class="field-wrapper">
-						<label>Password</label>
-						<input type="text" name=swimmerPassword">
-					</div>
-					<div class="field-wrapper">
-						<input type="submit" name="btnNewSwimmer"></input>
-						<input type="hidden" name="action" value="procNewSwimmer">
+						<input type="submit" name="btnAddEvent"></input>
+						<input type="hidden" name="action" value="procAddEvent">
 					</div>			
 				</form>					
             </div>

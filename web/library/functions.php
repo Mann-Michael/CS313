@@ -138,6 +138,25 @@ function buildEventOptions($distances, $strokes){
 	return $eo;
 }
 
+function buildDistanceOptions($distances){
+	$do .= '<select name="distanceId" id="distanceId">';
+	foreach ($distances as $distance){
+		$do .= '<option value="' . $distance[id] . '">' . $distance[distance] . '</option>';
+	}
+	$do .= '</select><br>';
+	return $do;
+}
+
+function buildStrokeOptions($strokes){
+	$so .= '<select name="strokeId" id="strokeId">';
+	foreach ($strokes as $stroke){
+		$so .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
+	}	
+	$so .= '</select><br>';
+	return $so;
+}
+
+
 function buildEventInfo($events){
 	$ei = '<form method="post" action="index.php">';
 	$ei = '<table>';
