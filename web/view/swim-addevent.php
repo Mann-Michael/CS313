@@ -38,13 +38,16 @@
 					<div class="field-wrapper">
 						<label>Distance/ Stroke</label>
 						<?php
-							buildDistanceOptions($distance);
+							$distanceOptions = buildDistanceOptions($distance);
+							echo $distanceOptions;
 						?>
 					</div>
 					<div class="field-wrapper">
 						<label>Stroke</label>
 						<?php 
-							buildStrokeOptions($strokes);
+							$strokeOptions = buildStrokeOptions($strokes);
+							echo $strokeOptions;
+							
 						?>
 					</div>
 					<div class="field-wrapper">

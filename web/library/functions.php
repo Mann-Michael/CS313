@@ -121,7 +121,8 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 }
 
 function buildEventOptions($distances, $strokes){
-	$eo = '<form method="post" action="index.php">';
+	
+	/*$eo = '<form method="post" action="index.php">';
 	$eo .= '<select name="distanceId" id="distanceId">';
 	foreach ($distances as $distance){
 		$eo .= '<option value="' . $distance[id] . '">' . $distance[distance] . '</option>';
@@ -131,8 +132,11 @@ function buildEventOptions($distances, $strokes){
 	foreach ($strokes as $stroke){
 		$eo .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
 	}	
-	$eo .= '</select><br>';
-	$eo .= '<input type="submit" name="btnReview"></input>';
+	$eo .= '</select>';
+	*/
+	$eo = buildDistanceOptions($distances);
+	$eo .= buildStrokeOptions($strokes);
+	$eo .= '<br><input type="submit" name="btnReview"></input>';
     $eo .= '<input type="hidden" name="action" value="viewEvents">';
 	$eo .= '</form>';
 	return $eo;
@@ -143,7 +147,7 @@ function buildDistanceOptions($distances){
 	foreach ($distances as $distance){
 		$do .= '<option value="' . $distance[id] . '">' . $distance[distance] . '</option>';
 	}
-	$do .= '</select><br>';
+	$do .= '</select>';
 	return $do;
 }
 
@@ -152,7 +156,7 @@ function buildStrokeOptions($strokes){
 	foreach ($strokes as $stroke){
 		$so .= '<option value="' . $stroke[id] . '">' . $stroke[stroketype] . '</option>';
 	}	
-	$so .= '</select><br>';
+	$so .= '</select>';
 	return $so;
 }
 
