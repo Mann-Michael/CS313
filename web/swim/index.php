@@ -97,7 +97,7 @@
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			$swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
 			//Prepare statement
-			$stmt = $db->prepare('INSERT INTO swimmer (swimmerName, swimmerAge, swimmerGender, swimmerTeam, swimmerEmail, swimmerPassword)
+			$stmt = $db->prepare('INSERT INTO swimmer (name, age, gender, team, email, password)
 			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
