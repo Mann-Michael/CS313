@@ -60,8 +60,8 @@
 						<input type="text" name=swimmerPassword">
 					</div>
 					<div class="field-wrapper">
-						<input type="submit" name="btnNewSwimmer"></input>
-						<input type="hidden" name="action" value="procNewSwimmer">
+						<input type="submit" name="btnEditSwimmer"></input>
+						<input type="hidden" name="action" value="procEditSwimmer">
 					</div>			
 				</form>	
             </div>

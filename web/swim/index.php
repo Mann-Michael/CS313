@@ -38,6 +38,20 @@
 			/*
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
+			
+			$swimmerId = $_SESSION['id'];
+			$strokeId = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
+			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
+			$eventTime = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
+			$eventLocation = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_STRING);
+
+			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ','. $eventLocation . ',CURRENT_DATE)');
+			$stmt->execute();			
+			//INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+			//VALUES (4,1,3,4678321,'THE Pool', CURRENT_DATE);
+			
+			
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
 		case 'ProcEditSwimmer':

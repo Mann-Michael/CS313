@@ -18,11 +18,6 @@
 			$stmt->execute();
 			$strokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-			//Build the swimmer list
-			$swimmerList = buildSwimmerList($swimmers);
-			
-			//Build the event options list
-			$eventOptions = buildEventOptions($distances, $strokes);
 		?>
     </head>
     <body>
@@ -47,7 +42,6 @@
 						<?php 
 							$strokeOptions = buildStrokeOptions($strokes);
 							echo $strokeOptions;
-							
 						?>
 					</div>
 					<div class="field-wrapper">
@@ -57,11 +51,6 @@
 					<div class="field-wrapper">
 						<label>Location</label>
 						<input type="text" name=eventLocation">
-					</div>
-					<div class="field-wrapper">
-						<label>Date</label>
-						<input type="text" name=eventDate">
-					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnAddEvent"></input>
 						<input type="hidden" name="action" value="procAddEvent">

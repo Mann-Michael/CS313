@@ -148,7 +148,6 @@ function buildStrokeOptions($strokes){
 	return $so;
 }
 
-
 function buildEventInfo($events){
 	$ei = '<form method="post" action="index.php">';
 	$ei = '<table>';
