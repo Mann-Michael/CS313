@@ -16,28 +16,28 @@
 				<form method="post" action="index.php">
 					<div class="field-wrapper">
 						<label>Swimmer Name</label>
-						<input type="text" name=swimmerName">
+						<input type="text" name="swimmerName">
 					</div>
 					<div class="field-wrapper">
 						<label>Age</label>
-						<input type="text" name=swimmerAge">
+						<input type="text" name="swimmerAge">
 					</div>
 					<div class="field-wrapper">
 						<label>Gender</label>
-						<input type="radio" name=swimmerGender" value="0">Female</input>
-						<input type="radio" name=swimmerGender" value="1">Male</input>
+						<input type="radio" name="swimmerGender" value="0">Female</input>
+						<input type="radio" name="swimmerGender" value="1">Male</input>
 					</div>
 					<div class="field-wrapper">
 						<label>Team</label>
-						<input type="text" name=swimmerTeam">
+						<input type="text" name="swimmerTeam">
 					</div>
 					<div class="field-wrapper">
 						<label>Email</label>
-						<input type="text" name=swimmerEmail">
+						<input type="text" name="swimmerEmail">
 					</div>
 					<div class="field-wrapper">
 						<label>Password</label>
-						<input type="text" name=swimmerPassword">
+						<input type="text" name="swimmerPassword">
 					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnNewSwimmer"></input>
