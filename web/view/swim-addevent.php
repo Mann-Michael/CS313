@@ -38,7 +38,7 @@
 					<div class="field-wrapper">
 						<label>Distance/ Stroke</label>
 						<?php
-							$distanceOptions = buildDistanceOptions($distance);
+							$distanceOptions = buildDistanceOptions($distances);
 							echo $distanceOptions;
 						?>
 					</div>
