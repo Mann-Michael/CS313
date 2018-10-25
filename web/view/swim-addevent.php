@@ -5,10 +5,6 @@
 		<?php include ("../common/head.php"); ?>
 		<?php
 			//SQL statements, these would usually be in a model, but I can't get that to work
-			//get all swimmers
-			$stmt = $db->prepare('SELECT * FROM swimmer');
-			$stmt->execute();
-			$swimmers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			//get all distances
 			$stmt = $db->prepare('SELECT * FROM distance');
 			$stmt->execute();

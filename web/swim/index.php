@@ -38,21 +38,13 @@
 			/*
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
-			
+			//Get variables from hidden post
 			$swimmerId = $_SESSION['id'];
 			$strokeId = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
 			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
 			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
 			$eventLocation = filter_input(INPUT_POST, 'eventLocation', FILTER_SANITIZE_STRING);
-
-			
-/*			echo $swimmerId;
-			echo $strokeId;
-			echo $distanceId;
-			echo $eventTime;
-			echo $eventLocation;
-*/		
-
+			//Prepare statement
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
 			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
@@ -61,7 +53,7 @@
 			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
 			$stmt->bindValue(':eventLocation', $eventLocation, PDO::PARAM_STR);
 			$stmt->execute();
-			
+			//send to view
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
 		case 'ProcEditSwimmer':
@@ -96,13 +88,26 @@
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
 		case 'procNewSwimmer':
-			/*
-			this function creates a new user as long as it doesnt exist yet
-			if it exists it sends the user back to viewLogin
-			if it doesnt exist, it sends them to viewManageUser
-			*/
-			include '../view/swim-login.php';
-			include '../view/swim-manageswimmer.php';
+			//adds swimmer
+			//Get variables from hidden post
+			$swimmerName = filter_input(INPUT_POST, 'swimmerName', FILTER_SANITIZE_STRING);
+			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
+			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
+			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
+			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
+			$swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
+			//Prepare statement
+			$stmt = $db->prepare('INSERT INTO swimmer (swimmerName, swimmerAge, swimmerGender, swimmerTeam, swimmerEmail, swimmerPassword)
+			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
+			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerPassword', $swimmerPassword, PDO::PARAM_STR);
+			$stmt->execute();
+			//send to view
+			header("location: ../swim/index.php");
 			break;			
 		case 'viewEvents':
 			include '../view/swim-events.php';
