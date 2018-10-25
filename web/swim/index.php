@@ -45,12 +45,12 @@
 			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
 			$eventLocation = filter_input(INPUT_POST, 'eventLocation', FILTER_SANITIZE_STRING);
 			
-			echo $swimmerId;
+/*			echo $swimmerId;
 			echo $strokeId;
 			echo $distanceId;
 			echo $eventTime;
 			echo $eventLocation;
-			
+*/		
 
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 			VALUES ('. $swimmerId . ','. $strokeId . ','. $distanceId . ','. $eventTime . ','. $eventLocation . ',CURRENT_DATE)');
