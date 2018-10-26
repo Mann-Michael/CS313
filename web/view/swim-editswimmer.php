@@ -35,11 +35,11 @@
 				<form method="post" action="index.php">
 					<div class="field-wrapper">
 						<label>Swimmer Name</label>
-						<input type="text" name=swimmerName" <?php if(isset($swimmerName)){ echo "value='$swimmerName'"; }?>>
+						<input type="text" name="swimmerName" <?php if(isset($swimmerName)){ echo "value='$swimmerName'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<label>Age</label>
-						<input type="text" name=swimmerAge" <?php if(isset($swimmerAge)){ echo "value='$swimmerAge'"; }?>>
+						<input type="text" name="swimmerAge" <?php if(isset($swimmerAge)){ echo "value='$swimmerAge'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<label>Gender</label>
@@ -48,11 +48,11 @@
 					</div>
 					<div class="field-wrapper">
 						<label>Team</label>
-						<input type="text" name=swimmerTeam" <?php if(isset($swimmerTeam)){ echo "value='$swimmerTeam'"; }?>>
+						<input type="text" name="swimmerTeam" <?php if(isset($swimmerTeam)){ echo "value='$swimmerTeam'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<label>Email</label>
-						<input type="text" name=swimmerEmail" <?php if(isset($swimmerEmail)){ echo "value='$swimmerEmail'"; }?>>
+						<input type="text" name="swimmerEmail" <?php if(isset($swimmerEmail)){ echo "value='$swimmerEmail'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnEditSwimmer"></input>
