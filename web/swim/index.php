@@ -92,7 +92,7 @@
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			//send to view
-			header("location: ../swim/index.php");
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
 		case 'viewLogin':
 			//This page presents a form that allows the user to enter user name and password, then sends it to procLogin
