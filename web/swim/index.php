@@ -77,18 +77,22 @@
 			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			
+			
+			//UPDATE swimmer 
+			//SET name = 'Avery', age = 9, gender = FALSE, team = 'Longhorns', email = 'avery@avery.com'
+			//WHERE id = 1;
 			//Prepare statement
-			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
-			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
-			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
-			$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
-			$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
-			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
-			$stmt->bindValue(':eventLocation', $eventLocation, PDO::PARAM_STR);
+			$stmt = $db->prepare('UPDATE swimmer
+			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail)
+			WHERE id = $swimmerId');
+			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
+			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			//send to view
-			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
-			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
+			header("location: ../swim/index.php");
 			break;			
 		case 'viewLogin':
 			//This page presents a form that allows the user to enter user name and password, then sends it to procLogin
@@ -149,6 +153,4 @@
 		    include '../view/swim-home.php';
     }
 ?>
-
-
 
