@@ -14,6 +14,11 @@
 			$stmt->execute();
 			$swimmer = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				
+			$swimmerName = $swimmer['name'];
+			$swimmerAge = $swimmer['age'];
+			$swimmerGender = convertGender($swimmer['gender']);
+			$swimmerTeam = $swimmer['team'];
+			$swimmerEmail = $swimmer['email'];
 		?>
     </head>
     <body>
@@ -45,10 +50,6 @@
 					<div class="field-wrapper">
 						<label>Email</label>
 						<input type="text" name=swimmerEmail" <?php if(isset($swimmerEmail)){ echo "value='$swimmerEmail'"; }?>>
-					</div>
-					<div class="field-wrapper">
-						<label>Password</label>
-						<input type="text" name=swimmerPassword" <?php if(isset($swimmerPassword)){ echo "value='$swimmerPassword'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnEditSwimmer"></input>
