@@ -13,7 +13,9 @@
 			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 			$stmt->execute();
 			$swimmer = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				
+			
+			print_r($swimmer);
+			
 			$swimmerName = $swimmer['name'];
 			$swimmerAge = $swimmer['age'];
 			$swimmerGender = convertGender($swimmer['gender']);
