@@ -77,6 +77,7 @@
 			$stmt = $db->prepare('UPDATE swimmer
 			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail
 			WHERE id = $swimmerId');
+			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
