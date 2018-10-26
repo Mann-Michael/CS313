@@ -16,11 +16,11 @@
 			
 			print_r($swimmer);
 			
-			$swimmerName = $swimmer['name'];
-			$swimmerAge = $swimmer['age'];
-			$swimmerGender = convertGender($swimmer['gender']);
-			$swimmerTeam = $swimmer['team'];
-			$swimmerEmail = $swimmer['email'];
+			$swimmerName = $swimmer[0]['name'];
+			$swimmerAge = $swimmer[0]['age'];
+			$swimmerGender = convertGender($swimmer[0]['gender']);
+			$swimmerTeam = $swimmer[0]['team'];
+			$swimmerEmail = $swimmer[0]['email'];
 		?>
     </head>
     <body>
