@@ -31,6 +31,7 @@
 		case 'viewEditSwimmer':
 			/*
 			this page presents a form allows the user to add events to themselves, or adjust their user information
+			NEED TO DO THIS!!!
 			*/
 			include '../view/swim-editswimmer.php';
 			break;
@@ -59,6 +60,7 @@
 		case 'ProcEditSwimmer':
 			/*
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
+			NEED TO DO THIS!!
 			*/
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
@@ -82,6 +84,7 @@
 			//compare password to the password for the email
 			//if the check is true, then include swim-profile with swimmerId
 			//if the check is false, then include the login screen and say it failed
+			//NEED TO DO THIS
 			$_SESSION['loggedin'] = TRUE;
 			$_SESSION['id'] = 1;
 			//use the session array to get the swimmer id
@@ -96,6 +99,9 @@
 			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			$swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
+			//Check to see if swimmer already exists
+			//NO CODE HERE YET but if same swimmer exists, take them back to new swimmer page with message
+			
 			//Prepare statement
 			$stmt = $db->prepare('INSERT INTO swimmer (name, age, gender, team, email, password)
 			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');

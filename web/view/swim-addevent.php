@@ -27,7 +27,7 @@
             <div class="floatpage" id="default" >
 				<form method="post" action="index.php">
 					<div class="field-wrapper">
-						<label>Distance/ Stroke</label>
+						<label>Distance</label>
 						<?php
 							$distanceOptions = buildDistanceOptions($distances);
 							echo $distanceOptions;
