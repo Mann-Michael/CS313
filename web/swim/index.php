@@ -57,7 +57,7 @@
 			//send to view
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;
-		case 'ProcEditSwimmer':
+		case 'procEditSwimmer':
 			/*
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
 			NEED TO DO THIS!!
