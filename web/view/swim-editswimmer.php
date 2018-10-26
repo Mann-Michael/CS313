@@ -18,7 +18,7 @@
 			
 			$swimmerName = $swimmer[0]['name'];
 			$swimmerAge = $swimmer[0]['age'];
-			$swimmerGender = convertGender($swimmer[0]['gender']);
+			$swimmerGender = $swimmer[0]['gender'];
 			$swimmerTeam = $swimmer[0]['team'];
 			$swimmerEmail = $swimmer[0]['email'];
 		?>
@@ -43,6 +43,9 @@
 					</div>
 					<div class="field-wrapper">
 						<label>Gender</label>
+						<input type="radio" name="swimmerGender" value="0" <?php if(isset($swimmerGender == 0)){ echo 'checked="checked"'; }?>>Female</input>
+						<input type="radio" name="swimmerGender" value="1"<?php if(isset($swimmerGender == 1)){ echo 'checked="checked"'; }?>>Male</input>
+						
 						<input type="text" name=swimmerGender" <?php if(isset($swimmerGender)){ echo "value='$swimmerGender'"; }?>>
 					</div>
 					<div class="field-wrapper">

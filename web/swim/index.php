@@ -62,6 +62,32 @@
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
 			NEED TO DO THIS!!
 			*/
+			
+			$swimmerName = $swimmer[0]['name'];
+			$swimmerAge = $swimmer[0]['age'];
+			$swimmerGender = convertGender($swimmer[0]['gender']);
+			$swimmerTeam = $swimmer[0]['team'];
+			$swimmerEmail = $swimmer[0]['email'];
+			
+			//Get variables from hidden post
+			$swimmerId = $_SESSION['id'];
+			$swimmerName = filter_input(INPUT_POST, 'swimmerName', FILTER_SANITIZE_STRING);
+			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
+			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
+			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
+			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
+			
+			//Prepare statement
+			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
+			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
+			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
+			$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
+			$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
+			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
+			$stmt->bindValue(':eventLocation', $eventLocation, PDO::PARAM_STR);
+			$stmt->execute();
+			//send to view
+			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
 		case 'viewLogin':
