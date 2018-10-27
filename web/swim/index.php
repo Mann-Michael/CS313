@@ -108,8 +108,44 @@
 			//if the check is true, then include swim-profile with swimmerId
 			//if the check is false, then include the login screen and say it failed
 			//NEED TO DO THIS
-			$_SESSION['loggedin'] = TRUE;
-			$_SESSION['id'] = 1;
+			
+			//load variables from the form
+			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_EMAIL);
+            $swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
+			
+			/*$stmt = $db->prepare('INSERT INTO swimmer (name, age, gender, team, email, password)
+			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
+			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
+			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerPassword', $hashedPassword, PDO::PARAM_STR);
+			$stmt->execute();*/
+			
+			
+			//using the email, find the account info
+			$stmt = $db->prepare('SELECT * FROM swimmer WHERE swimmerEmail = :swimmerEmail');
+			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
+			$stmt->execute();
+			$swimmerInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			//see if there is an email and return a warning INCOMPLETE
+			
+			//
+			
+			//if there is an existing email, then match the password
+			$hashCheck = password_verify($swimmerPassword, $swimmerInfo[0]['password']);
+			//if the hased PWs don't match, then print an error
+            //and return to the login view
+            if (!$hashCheck) {
+              echo "<p class='notify'>Please check your password and try again.</p>";
+              include '../view/swim-login.php';
+              exit;
+            }
+			
+            // A valid user exists, log them in
+            $_SESSION['loggedin'] = TRUE;
+			$_SESSION['id'] = swimmerInfo[0]['id'];
 			//use the session array to get the swimmer id
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
@@ -125,6 +161,9 @@
 			//Check to see if swimmer already exists
 			//NO CODE HERE YET but if same swimmer exists, take them back to new swimmer page with message
 			
+			//hash the password
+			$hashedPassword = password_hash($swimmerPassword, PASSWORD_DEFAULT);
+			
 			//Prepare statement
 			$stmt = $db->prepare('INSERT INTO swimmer (name, age, gender, team, email, password)
 			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
@@ -133,7 +172,7 @@
 			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
 			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
-			$stmt->bindValue(':swimmerPassword', $swimmerPassword, PDO::PARAM_STR);
+			$stmt->bindValue(':swimmerPassword', $hashedPassword, PDO::PARAM_STR);
 			$stmt->execute();
 			//send to view
 			header("location: ../swim/index.php");

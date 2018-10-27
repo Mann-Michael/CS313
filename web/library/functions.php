@@ -4,7 +4,20 @@
  * this is the FUNCTIONS library
  */
 
-function buildCartBrowseDisplay($products){
+function checkEmail($swimmerEmail){
+  $valEmail = filter_var($swimmerEmail, FILTER_VALIDATE_EMAIL);
+  return $valEmail;
+}
+
+// Check the password for a minimum of 8 characters,
+// at least one 1 capital letter, at least 1 number and
+// at least 1 special character
+function checkPassword($clientPassword){
+  $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])[[:print:]]{8,}$/';
+  return preg_match($pattern, $clientPassword);
+ 
+ 
+ function buildCartBrowseDisplay($products){
 //This area is for building the display of the Cart Browse
 	$bd = "";
 	foreach ($products as $product) {
