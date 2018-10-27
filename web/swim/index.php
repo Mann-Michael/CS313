@@ -127,7 +127,7 @@
             if (!$hashCheck) {
               echo $hashCheck;
 			  echo $swimmerPassword;
-			  echo $swimmerInfo[0]['password'])
+			  echo $swimmerInfo[0]['password']);
 			  $hashedPassword = password_hash($swimmerPassword, PASSWORD_DEFAULT);
 			  echo $hashedPassword;
 			  echo "<p class='notify'>Please check your password and try again.</p>";
