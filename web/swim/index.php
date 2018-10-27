@@ -110,11 +110,11 @@
 			//NEED TO DO THIS
 			
 			//load variables from the form
-			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_EMAIL);
+			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STR);
             $swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
 			
 			//using the email, find the account info
-			$stmt = $db->prepare('SELECT * FROM swimmer WHERE swimmerEmail = :swimmerEmail');
+			$stmt = $db->prepare('SELECT * FROM swimmer WHERE email = :swimmerEmail');
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			$swimmerInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
