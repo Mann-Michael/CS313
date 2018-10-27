@@ -16,11 +16,11 @@
 				<form method="post" action="index.php">
 					<div class="field-wrapper">
 						<label>Email</label>
-						<input type="text" name=swimmerEmail">
+						<input type="text" name="swimmerEmail">
 					</div>
 					<div class="field-wrapper">
 						<label>Password</label>
-						<input type="text" name=swimmerPassword">
+						<input type="text" name="swimmerPassword">
 					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnLogin"></input>
