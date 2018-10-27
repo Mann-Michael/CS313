@@ -125,20 +125,14 @@
 			//if the hased PWs don't match, then print an error
             //and return to the login view
             if (!$hashCheck) {
-				print_r($swimmerInfo);
-              echo $hashCheck;
-			  echo $swimmerPassword;
-			  echo $swimmerInfo[0]['password'];
-			  $hashedPassword = password_hash($swimmerPassword, PASSWORD_DEFAULT);
-			  echo $hashedPassword;
 			  echo "<p class='notify'>Please check your password and try again.</p>";
-              //include '../view/swim-login.php';
+              include '../view/swim-login.php';
               exit;
             }
 			
             // A valid user exists, log them in
             $_SESSION['loggedin'] = TRUE;
-			$_SESSION['id'] = swimmerInfo[0]['id'];
+			$_SESSION['id'] = $swimmerInfo[0]['id'];
 			//use the session array to get the swimmer id
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));
 			break;			
