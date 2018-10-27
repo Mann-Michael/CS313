@@ -110,7 +110,7 @@
 			//NEED TO DO THIS
 			
 			//load variables from the form
-			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STR);
+			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
             $swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
 			
 			//using the email, find the account info
