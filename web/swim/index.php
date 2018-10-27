@@ -126,7 +126,7 @@
             //and return to the login view
             if (!$hashCheck) {
               echo "<p class='notify'>Please check your password and try again.</p>";
-              include '../view/swim-login.php';
+              //include '../view/swim-login.php';
               exit;
             }
 			
