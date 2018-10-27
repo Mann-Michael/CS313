@@ -125,6 +125,7 @@
 			//if the hased PWs don't match, then print an error
             //and return to the login view
             if (!$hashCheck) {
+				print_r($swimmerInfo);
               echo $hashCheck;
 			  echo $swimmerPassword;
 			  echo $swimmerInfo[0]['password'];
