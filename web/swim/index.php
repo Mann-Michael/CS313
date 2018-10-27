@@ -113,25 +113,12 @@
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_EMAIL);
             $swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
 			
-			/*$stmt = $db->prepare('INSERT INTO swimmer (name, age, gender, team, email, password)
-			VALUES (:swimmerName, :swimmerAge, :swimmerGender, :swimmerTeam, :swimmerEmail, :swimmerPassword)');
-			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
-			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
-			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
-			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
-			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
-			$stmt->bindValue(':swimmerPassword', $hashedPassword, PDO::PARAM_STR);
-			$stmt->execute();*/
-			
-			
 			//using the email, find the account info
 			$stmt = $db->prepare('SELECT * FROM swimmer WHERE swimmerEmail = :swimmerEmail');
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			$swimmerInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			//see if there is an email and return a warning INCOMPLETE
-			
-			//
 			
 			//if there is an existing email, then match the password
 			$hashCheck = password_verify($swimmerPassword, $swimmerInfo[0]['password']);
