@@ -19,6 +19,9 @@
     }
 
     switch ($action){
+		case 'viewError':
+			include = '../view/swim-error.php';
+			break;
 		case 'viewProfile':
 			include '../view/swim-profile.php';
 			break;
@@ -125,9 +128,10 @@
 			//if the hased PWs don't match, then print an error
             //and return to the login view
             if (!$hashCheck) {
-			  echo "<p class='notify'>Please check your password and try again.</p>";
-              include '../view/swim-login.php';
-              exit;
+				$_SESSION['error'] = "<p>Incorrect password, please try again.</p>";
+				$errorRedirect = "viewLogin";
+				header("location: ../swim/index.php?action=viewError&errorRedirect=".urlencode($errorRedirect));
+				exit;
             }
 			
             // A valid user exists, log them in
