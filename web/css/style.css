@@ -36,6 +36,7 @@ table, tr, th, td {
 	margin: auto;
 	border: 3px solid white;
 	border-collapse: collapse;
+	padding: 8px;
 }
 
 th {
