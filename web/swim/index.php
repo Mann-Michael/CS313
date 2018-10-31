@@ -20,7 +20,7 @@
 
     switch ($action){
 		case 'viewError':
-			include = '../view/swim-error.php';
+			include '../view/swim-error.php';
 			break;
 		case 'viewProfile':
 			include '../view/swim-profile.php';
