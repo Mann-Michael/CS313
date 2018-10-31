@@ -30,11 +30,13 @@ p, li {
 
 p {
 	margin: auto;
+	padding: 5px, 5px, 5px, 5px;
 }
 
 table, tr, th, td {
 	margin: auto;
 	border: 1px solid white;
+	border-collapse: collapse;
 }
 
 li {
