@@ -17,7 +17,7 @@
 					<h2>Error</h2>
 					<?php				
 						//display error
-						if(isset($_SESSION)){echo $_SESSION['error'];}
+						if(isset($_SESSION['error'])){echo $_SESSION['error'];}
 												
 						$errorRedirect = filter_input(INPUT_POST, 'errorRedirect', FILTER_SANITIZE_STRING);
 						$errorButton = '<br><input type="submit" name="btnError"></input>';
