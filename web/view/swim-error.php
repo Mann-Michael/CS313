@@ -23,7 +23,7 @@
 							}
 												
 						$errorRedirect = filter_input(INPUT_GET, 'errorRedirect', FILTER_SANITIZE_STRING);
-						$errorButton = '<form method="post" action="index.php"><br><input type="submit" name="btnError"></input>';
+						$errorButton = '<form method="post" action="index.php"><br><input type="submit" name="btnError" value="Go Back"></input>';
 						$errorButton .= '<input type="hidden" name="action" value="' . $errorRedirect . '"></form>';
 						echo($errorButton);
 						
