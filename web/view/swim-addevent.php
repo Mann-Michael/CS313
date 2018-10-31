@@ -47,6 +47,7 @@
 					<div class="field-wrapper">
 						<label>Location</label>
 						<input type="text" name="eventLocation">
+					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnAddEvent"></input>
 						<input type="hidden" name="action" value="procAddEvent">
