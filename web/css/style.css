@@ -30,6 +30,7 @@ li {
 
 p {
 	margin: auto;
+	padding: 10px;
 }
 
 table, tr, th, td {
@@ -37,10 +38,6 @@ table, tr, th, td {
 	border: 3px solid white;
 	border-collapse: collapse;
 	padding: 8px;
-}
-
-th {
-	padding: 3px, 3px, 3px, 3px;
 }
 
 li {
