@@ -24,19 +24,22 @@ h2 {
     font-family: Rock Salt;
 }
 
-p, li {
+li {
     text-align: left;
 }
 
 p {
 	margin: auto;
-	padding: 5px, 5px, 5px, 5px;
 }
 
 table, tr, th, td {
 	margin: auto;
-	border: 1px solid white;
+	border: 3px solid white;
 	border-collapse: collapse;
+}
+
+th {
+	padding: 3px, 3px, 3px, 3px;
 }
 
 li {
@@ -50,7 +53,7 @@ li {
 }
 
 .floatpage {
-    padding-top: 220px;
+    padding-top: 230px;
     padding-bottom: 50px;
 }
 

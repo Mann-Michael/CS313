@@ -98,7 +98,7 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 
 	$sp = '<table>';
 	$sp .= '<thead>';
-	$sp .= '<tr><th>Information</th></tr>';
+	$sp .= '<tr><th colspan="2">Information</th></tr>';
 	$sp .= '</thead>';
 	$sp .= '<tbody>';
 	$sp .= '<tr><td>Name</td><td>' . $swimmerInfo[0][name] . '</td></tr>';
@@ -108,7 +108,7 @@ function buildSwimmerProfile($swimmerInfo, $eventInfo){
 	$sp .= '</tbody></table><br>';
 	$sp .= '<table>';
 	$sp .= '<thead>';
-	$sp .= '<tr><th>Events</th></tr>';
+	$sp .= '<tr><th colspan="5">Events</th></tr>';
 	$sp .= '<tr><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
 	$sp .= '</thead>';
 	$sp .= '<tbody>';
@@ -152,7 +152,7 @@ function buildEventInfo($events){
 	$ei = '<form method="post" action="index.php">';
 	$ei = '<table>';
 	$ei .= '<thead>';
-	$ei .= '<tr><th>Events</th></tr>';
+	$ei .= '<tr><th colspan="6">Events</th></tr>';
 	$ei .= '<tr><th>Name</th><th>Distance</th><th>Stroke</th><th>Time</th><th>Location</th><th>Date</th></tr>';
 	$ei .= '</thead>';
 	$ei .= '<tbody>';
