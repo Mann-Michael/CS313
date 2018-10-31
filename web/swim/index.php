@@ -152,7 +152,7 @@
 			//Check to see if swimmer already exists
 			//NO CODE HERE YET but if same swimmer exists, take them back to new swimmer page with message
 			//doesnt work yet
-			$stmt = $db->prepare('SELECT email FROM swimmer WHERE swimmerEmail = :swimmerEmail');
+			$stmt = $db->prepare('SELECT * FROM swimmer WHERE email = :swimmerEmail');
 			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			$matchEmail = $stmt->fetch(PDO::FETCH_NUM);
