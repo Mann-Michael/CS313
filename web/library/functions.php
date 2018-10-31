@@ -69,7 +69,7 @@ function buildSwimmerList($swimmers){
 	if(count($swimmers) > 0){
 		$sl = '<table>';
 		$sl .= '<thead>';
-		$sl .= '<tr><th>Swimmer</th><td></td></tr>';
+		$sl .= '<tr><th>Swimmer</th></tr>';
 		$sl .= '</thead>';
 		$sl .= '<tbody>';
 		foreach ($swimmers as $swimmer) {
