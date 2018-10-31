@@ -128,7 +128,7 @@
 			//if the hased PWs don't match, then print an error
             //and return to the login view
             if (!$hashCheck) {
-				$_SESSION['error'] = "<p>Incorrect password, please try again.</p>";
+				$_SESSION['error'] = "<p>Incorrect Password or Email, please try again.</p>";
 				$errorRedirect = "viewLogin";
 				header("location: ../swim/index.php?action=viewError&errorRedirect=".urlencode($errorRedirect));
 				exit;
@@ -151,7 +151,18 @@
 			$swimmerPassword = filter_input(INPUT_POST, 'swimmerPassword', FILTER_SANITIZE_STRING);
 			//Check to see if swimmer already exists
 			//NO CODE HERE YET but if same swimmer exists, take them back to new swimmer page with message
-			
+			//doesnt work yet
+			$stmt = $db->prepare('SELECT email FROM swimmer WHERE swimmerEmail = :swimmerEmail');
+			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
+			$stmt->execute();
+			$matchEmail = $stmt->fetch(PDO::FETCH_NUM);
+			$stmt->closeCursor();
+			if($matchEmail >= 1){
+				$_SESSION['error'] = "<p>There is already an account associated with that email. Please try another one.</p>";
+				$errorRedirect = "viewNewSwimmer";
+				header("location: ../swim/index.php?action=viewError&errorRedirect=".urlencode($errorRedirect));
+				exit;
+			}			
 			//hash the password
 			$hashedPassword = password_hash($swimmerPassword, PASSWORD_DEFAULT);
 			
