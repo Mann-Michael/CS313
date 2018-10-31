@@ -22,12 +22,7 @@
 								echo $_SESSION['error'];
 							}
 												
-						$errorRedirect = filter_input(INPUT_POST, 'errorRedirect', FILTER_SANITIZE_STRING);
-						
-						echo $_SESSION['error'];
-						echo $errorRedirect;
-						
-						
+						$errorRedirect = filter_input(INPUT_GET, 'errorRedirect', FILTER_SANITIZE_STRING);
 						$errorButton = '<form method="post" action="index.php"><br><input type="submit" name="btnError"></input>';
 						$errorButton .= '<input type="hidden" name="action" value="' . $errorRedirect . '"></form>';
 						echo($errorButton);
