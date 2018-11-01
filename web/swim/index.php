@@ -68,18 +68,16 @@
 			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
 			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
 			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
-			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			
 			//Prepare statement
 			$stmt = $db->prepare('UPDATE swimmer
-			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail
+			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam
 			WHERE id = :swimmerId');
 			$stmt->bindValue(':swimmerId', $_SESSION['id'], PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
 			$stmt->bindValue(':swimmerTeam', $swimmerTeam, PDO::PARAM_STR);
-			$stmt->bindValue(':swimmerEmail', $swimmerEmail, PDO::PARAM_STR);
 			$stmt->execute();
 			//send to view
 			header("location: ../swim/index.php?action=viewProfile&id=".urlencode($_SESSION['id']));

@@ -18,7 +18,6 @@
 			$swimmerAge = $swimmer[0]['age'];
 			$swimmerGender = $swimmer[0]['gender'];
 			$swimmerTeam = $swimmer[0]['team'];
-			$swimmerEmail = $swimmer[0]['email'];
 		?>
     </head>
     <body>
@@ -47,10 +46,6 @@
 					<div class="field-wrapper">
 						<label>Team</label>
 						<input type="text" name="swimmerTeam" <?php if(isset($swimmerTeam)){ echo "value='$swimmerTeam'"; }?>>
-					</div>
-					<div class="field-wrapper">
-						<label>Email</label>
-						<input type="text" name="swimmerEmail" <?php if(isset($swimmerEmail)){ echo "value='$swimmerEmail'"; }?>>
 					</div>
 					<div class="field-wrapper">
 						<input type="submit" name="btnEditSwimmer"></input>
