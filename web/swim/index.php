@@ -43,7 +43,6 @@
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
 			//Get variables from hidden post
-			//$swimmerId = $_SESSION['id'];
 			$strokeId = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
 			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
 			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
@@ -65,7 +64,6 @@
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
 			*/
 			//Get variables from hidden post
-			//$swimmerId = $_SESSION['id'];
 			$swimmerName = filter_input(INPUT_POST, 'swimmerName', FILTER_SANITIZE_STRING);
 			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
 			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
@@ -106,7 +104,6 @@
 			//compare password to the password for the email
 			//if the check is true, then include swim-profile with swimmerId
 			//if the check is false, then include the login screen and say it failed
-			//NEED TO DO THIS
 			
 			//load variables from the form
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
