@@ -43,7 +43,7 @@
 			this function processes the user add events to themselves and sends them back to a refreshed manage user page
 			*/
 			//Get variables from hidden post
-			$swimmerId = $_SESSION['id'];
+			//$swimmerId = $_SESSION['id'];
 			$strokeId = filter_input(INPUT_POST, 'strokeId', FILTER_SANITIZE_NUMBER_INT);
 			$distanceId = filter_input(INPUT_POST, 'distanceId', FILTER_SANITIZE_NUMBER_INT);
 			$eventTime = filter_input(INPUT_POST, 'eventTime', FILTER_SANITIZE_NUMBER_INT);
@@ -51,7 +51,7 @@
 			//Prepare statement
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
-			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerId', $_SESSION['id'];, PDO::PARAM_INT);
 			$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
 			$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
 			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
@@ -65,7 +65,7 @@
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
 			*/
 			//Get variables from hidden post
-			$swimmerId = $_SESSION['id'];
+			//$swimmerId = $_SESSION['id'];
 			$swimmerName = filter_input(INPUT_POST, 'swimmerName', FILTER_SANITIZE_STRING);
 			$swimmerAge = filter_input(INPUT_POST, 'swimmerAge', FILTER_SANITIZE_NUMBER_INT);
 			$swimmerGender = filter_input(INPUT_POST, 'swimmerGender', FILTER_SANITIZE_NUMBER_INT);
@@ -76,7 +76,7 @@
 			$stmt = $db->prepare('UPDATE swimmer
 			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail
 			WHERE id = :swimmerId');
-			$stmt->bindValue(':swimmerId', $swimmerId, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerId', $_SESSION['id'];, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
