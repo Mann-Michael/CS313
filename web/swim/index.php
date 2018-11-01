@@ -63,7 +63,6 @@
 		case 'procEditSwimmer':
 			/*
 			this function processes the edit swimmer for themselves and sends them back to a refreshed manage user page
-			NEED TO DO THIS!!
 			*/
 			//Get variables from hidden post
 			$swimmerId = $_SESSION['id'];
@@ -73,9 +72,6 @@
 			$swimmerTeam = filter_input(INPUT_POST, 'swimmerTeam', FILTER_SANITIZE_STRING);
 			$swimmerEmail = filter_input(INPUT_POST, 'swimmerEmail', FILTER_SANITIZE_STRING);
 			
-			//UPDATE swimmer 
-			//SET name = 'Avery', age = 9, gender = FALSE, team = 'Longhorns', email = 'avery@avery.com'
-			//WHERE id = 1;
 			//Prepare statement
 			$stmt = $db->prepare('UPDATE swimmer
 			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail
