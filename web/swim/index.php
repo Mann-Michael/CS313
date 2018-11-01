@@ -51,7 +51,7 @@
 			//Prepare statement
 			$stmt = $db->prepare('INSERT INTO event (swimmerid, strokeid, distanceid, time, location, date)
 			VALUES (:swimmerId, :strokeId, :distanceId, :eventTime, :eventLocation, CURRENT_DATE)');
-			$stmt->bindValue(':swimmerId', $_SESSION['id'];, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerId', $_SESSION['id'], PDO::PARAM_INT);
 			$stmt->bindValue(':strokeId', $strokeId, PDO::PARAM_INT);
 			$stmt->bindValue(':distanceId', $distanceId, PDO::PARAM_INT);
 			$stmt->bindValue(':eventTime', $eventTime, PDO::PARAM_INT);
@@ -76,7 +76,7 @@
 			$stmt = $db->prepare('UPDATE swimmer
 			SET name = :swimmerName, age = :swimmerAge, gender = :swimmerGender, team = :swimmerTeam, email = :swimmerEmail
 			WHERE id = :swimmerId');
-			$stmt->bindValue(':swimmerId', $_SESSION['id'];, PDO::PARAM_INT);
+			$stmt->bindValue(':swimmerId', $_SESSION['id'], PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerName', $swimmerName, PDO::PARAM_STR);
 			$stmt->bindValue(':swimmerAge', $swimmerAge, PDO::PARAM_INT);
 			$stmt->bindValue(':swimmerGender', $swimmerGender, PDO::PARAM_BOOL);
